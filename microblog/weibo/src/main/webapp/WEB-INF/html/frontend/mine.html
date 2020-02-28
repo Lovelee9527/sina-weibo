@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的首页 微博 随时随地发现新鲜事</title>
+
+<!-- import导入头部 导航栏部分 -->
+<link rel="import" href="head.html" id="page1" />
+
+<!-- JQuery必需  -->
+<script src="../resources/js/common/jquery/jquery.min.2.2.4.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/frontend/mine.css">
+<link rel="shortcut icon" href="../resources/images/weibo.ico">
+<link rel="stylesheet" type="text/css"
+	href="../resources/mineIcon/iconfont.css">
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/weibocommon.css">
+<!-- @功能 -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/jquery.atwho.min.css">
+<!--自定义-->
+<!-- toast必需链接 -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/jquery.toast.min.css">
+<script type="text/javascript"
+	src="../resources/js/common/jquery.toast.min.js"></script>
+<style type="text/css">
+/* 放大图片 */
+.article-context-img img {
+cursor:url("../resources/images/f1.png"),auto;
+}
+.bigimg-tip{
+	cursor:url("../resources/images/f2.png"),auto;	
+	}
+.collection-end{
+   background-color:#fff;
+}
+
+</style>
+</head>
+<body>
+	<!-- 导航栏部分 -->
+	<script type="text/javascript">
+         document.write(page1.import.body.innerHTML);
+	</script>
+	<!-- 导航栏部分 -->
+
+	<div class="content">
+		<!-- 左边部分 -->
+		<div class="content-left">
+			<div class="content-left-top">
+				<div>
+					<a class="btn-frontend" style="cursor: pointer;">首页</a>
+				</div>
+				<div>
+					<a class="btn-collection" style="cursor: pointer;">我的收藏</a>
+				</div>
+				<div>
+					<a class="btn-mypraise" style="cursor: pointer;">我的赞</a>
+				</div>
+			</div>
+			<div class="public-line"></div>
+			<div class="content-left-middle">
+				<div>
+					<a style="cursor: pointer;" class="btn-hotweibo">热门微博</a>
+				</div>
+				<!-- <div>
+					<a href="#">热门视频</a>
+				</div> -->
+			</div>
+			<div class="public-line"></div>
+			<div class="content-left-bottom">
+				<div>
+					<a style="cursor: pointer;" class="btn-newweibo">最新微博</a>
+				</div>
+				<!-- <div>
+					<a href="#">好友圈</a>
+				</div>
+				<div>
+					<a href="#">特别关注</a>
+				</div>
+				<div>
+					<a href="#">V+微博</a>
+				</div>
+				<div>
+					<a href="#">明星</a>
+				</div>
+				<div>
+					<a href="#">育儿</a>
+				</div>
+				<div>
+					<a href="#">同学</a>
+				</div>
+				<div>
+					<a href="#">群微博</a>
+				</div>
+				<div>
+					<a href="#">悄悄关注</a>
+				</div> -->
+			</div> 
+			<div class="public-line"></div>
+		</div>
+		
+		<!-- 中间部分 -->
+		<div class="content-middle-all">
+		
+		    <!--我的赞  -->
+			<div class="content-middle" id="mid-mypraise" style="display:none;width:600px; height:35px; background-color: #fff;">
+			   <span style="font-size:13px;line-height:35px;margin-left:15px;">赞过的微博</span>
+			   <div class="publish" id="myPraiseItem" style="margin-top:10px;"></div>
+			   <!-- 没微博了 -->
+				<div class="load-end"
+					style="display:block; width: 100%; height: 0px; background-color: #fff; line-height: 30px; margin-bottom: 40px; margin-top: 15px;text-align: center; font-size: 12px; 
+					color: #fff;">
+					已读完所有赞，点击 <a href="#" class="find-weibo"
+						style="text-decoration: none; color: #F7691D;">发现</a> 查看更多精彩微博
+				</div>
+				<!-- 没微博了 -->
+			</div>
+			
+			 <!--我的收藏  -->
+			<div class="content-middle" id="mid-collection" style="display:none; height:35px;">
+			   <span style="font-size:13px;line-height:35px;margin-left:15px;">我的收藏<span style="color: #FA7D3C;">(共<span class="collection-count">2</span>条)</span></span>
+			   <div class="publish" id="collectionItem" style="margin-top:10px;"></div>
+			  <!-- 没微博了 -->
+				<div class="load-end"
+					style="display:block; width: 100%; height: 0px; background-color: #fff; line-height: 30px; margin-bottom: 40px; margin-top: 15px;text-align: center;
+					 font-size: 12px; color: #fff;">
+					已读完所有收藏，点击 <a href="#" class="find-weibo"
+						style="text-decoration: none; color: #F7691D;">发现</a> 查看更多精彩微博
+				</div>
+				<!-- 没微博了 -->
+			</div>
+			
+			 <!--热门微博  -->
+			<div class="content-middle mid-hotweibo" style="display:none;width:600px; height:35px; background-color: #fff;">
+			   <span style="font-size:13px;line-height:35px;margin-left:15px;">热门微博</span>
+			   <div class="publish" id="hotweibo" style="margin-top:10px;"></div>
+			   <!-- 没微博了 -->
+				<div class="load-end"
+					style="display:block; width: 100%; height: 0px; background-color: #fff; line-height: 30px; margin-bottom: 40px; margin-top: 15px;text-align: center; font-size: 12px; 
+					color: #fff;">
+					已读完所有热门微博，点击 <a href="#" class="find-weibo"
+						style="text-decoration: none; color: #F7691D;">发现</a> 查看更多精彩微博
+				</div>
+				<!-- 热门微博 -->
+			</div>
+			
+			 <!--最新微博  -->
+			<div class="content-middle mid-newweibo" style="display:none; height:35px;">
+			   <span style="font-size:13px;line-height:35px;margin-left:15px;">最新微博</span>
+			   <div class="publish" id="newweibo" style="margin-top:10px;"></div>
+			  <!-- 没微博了 -->
+				<div class="load-end"
+					style="display:block; width: 100%; height: 0px; background-color: #fff; line-height: 30px; margin-bottom: 40px; margin-top: 15px;text-align: center;
+					 font-size: 12px; color: #fff;">
+					已读完所有最新微博，点击 <a href="#" class="find-weibo"
+						style="text-decoration: none; color: #F7691D;">发现</a> 查看更多精彩微博
+				</div>
+				<!-- 最新微博 -->
+			</div>
+		
+		     <!--首页  -->
+			<div class="content-middle" id="mid-frontend" style="display:block;">
+
+				<div class="content-middle-title">有什么新鲜事想告诉大家？</div>
+				<div class="content-middle-context">
+					<form>
+						<textarea id="content"></textarea>
+						<input type="file" accept=".png, .jpg, .jpeg" class="uploadImg"
+							multiple="multiple" /> <label>
+							<div id="upimg-one">上传图片</div>
+						</label>
+						<button id="publish" OnClick="return false">发布</button>
+					</form>
+				</div>
+				<!-- 上传图片 -->
+				<div class="all-upimg">
+					<!-- <img src="" class="upimg-one"></img> -->
+					<span class="all-upimg-title">本地上传<span
+						class="all-upimg-delete">x</span></span> <label for="upimg-1"
+						id="label-1">
+						<div>
+							<span class="delete-img" data-id="1">x</span>
+							<div class="special-img2">+</div>
+							<img src="" class="upimg-1">
+						</div>
+					</label> <input type="file" id="upimg-1" class="weibo-img" data-id="1" />
+
+
+				</div>
+				<!-- 上传图片 -->
+
+				<!-- 发布后的微博出现在publish里面 -->
+
+				<div class="publish" id="weiboItem">
+
+					<!-- 一条微博start -->
+					<!-- <div class="article" style="display: none;">
+								<div class="article-header">
+
+
+									<div>
+										<a href=""><img src="../resources/images/smallBgc.png"
+											id="weibo-headImg" /></a>
+									</div>
+									<div class="article-info">
+										<div class="article-user">
+											<a href="" id="weibo-nickName">用户昵称</a>
+										</div>
+										<div class="article-time">
+											<a href="" id="weibo-publishTime">11月15日 12：39</a>
+										</div>
+									</div>
+									<div class="arrow">
+										<span class="iconfont" id="arrow">&#xe624;</span>
+									</div>
+									<div class="arrow-context">
+										<ul>
+											<li><a href="">帮上头条</a></li>
+											<li><a href="">屏蔽这条微博</a></li>
+											<li><a href="">屏蔽新浪微博</a></li>
+											<li><a href="">取消关注新浪微博</a></li>
+											<li><a href="">投诉</a></li>
+										</ul>
+									</div>
+								</div>
+								文章部分
+								<div class="article-context">
+
+									<div class="article-context-title" id="weibo-content1"></div>
+									<div class="article-context-img">
+										<img src="" id="1"> <img src="" id="2"> <img
+											src="" id="3"> <img src="" id="4"> <img src=""
+											id="5"> <img src="" id="6"> <img src="" id="7">
+										<img src="" id="8"> <img src="" id="9">
+
+									</div>
+								</div>
+
+								底部
+								<div class="article-footer">
+									<div>
+										<span class="iconfont">&#xe641;</span><span
+											class="footer-font">收藏</span>
+									</div>
+
+									<div>
+										<span class="iconfont">&#xe628;</span><span
+											class="footer-font">转发</span>
+									</div>
+
+									<div id="comment-icon">
+										<span class="iconfont">&#xe62f;</span><span
+											class="footer-font">评论</span>
+									</div>
+									<div>
+										<span class="iconfont">&#xe639;</span><span
+											class="footer-font">1</span>
+									</div>
+								</div> -->
+
+					<!-- 一条微博end -->
+
+					<!-- 评论模块 -->
+					<!-- <div class="comment">
+							<div class="comment-first">
+								<div>
+									<img src="\upload\weibo\author25\2\4.jpg"
+										style="width: 32px; height: 32px; margin-top: 15px; margin-left: 18px;">
+								</div>
+								<div>
+									<input class="comment-input" type="text"
+										style="margin-top: 15px; height: 27px; width: 518px; margin-left: 10px;" />
+								</div>
+								<!--disabled-->
+					<!-- <div>
+									<button type="button" disabled class="comment-button">评论</button>
+								</div>
+
+							</div>
+							<div class="comment-list">
+								<div>
+									<span id="according-hot">按时间</span>&nbsp; <span
+										id="according-time"></span>
+								</div> -->
+
+					<!-- 评论列表 -->
+					<!--  <div class="comment-list-context">
+
+									<!-- 一条评论 -->
+					<!-- <div class="hot"
+										style="width: 600px; min-height: 60px; margin: 0 auto; margin-top: 10px; display: flex; position: relative;">
+										<img src="\upload\weibo\author25\2\7.jpg"
+											style="width: 32px; height: 32px; margin-left: 18px; margin-right: 10px;">
+										<div>
+											<div>
+												<a href=""
+													style="font-size: 13px; text-decoration: none; color: #FA7D3C; margin-left: 20px;">新浪微博</a>:
+											</div>
+											<div
+												style="position: absolute; left: 145px; top: 0px; height: 60px; width: 350px; word-wrap: break-word; overflow: hidden; font-size: 13px;">
+												我是新浪微博！</div>
+											<div style="color: #808080; font-size: 10px;">11月18日
+												12:21</div>
+										</div>
+										<div style="position: absolute; right: 30px; bottom: 10px;">
+											<a href=""
+												style="text-decoration: none; color: #333; font-size: 11px;">回复</a>&nbsp;|
+											<span class="iconfont"
+												style="margin-left: 5px; color: #515152;">&#xe639;</span>&nbsp;<span
+												style="font-size: 13px;">26</span>
+										</div>
+									</div> -->
+					<!-- 一条评论 -->
+
+					<!-- </div>
+							</div>
+						</div> -->
+					<!-- 评论 -->
+
+				</div>
+				<!-- 微博列表（div）的结束 -->
+
+				<!-- 加载提示符 -->
+				<div class="ajaxtips"
+					style="margin-left: 260px; margin-bottom: 50px;">
+					Loding.....</div>
+				<!--加载完全部的提示符  -->
+				<!--  <div class="load-end" style="display:none;margin-left:260px;margin-bottom:50px;">已经到底了哦...</div> -->
+				<!-- 没微博了 -->
+				<div class="load-end"
+					style="width: 100%; height: 30px; background-color: #fff; line-height: 30px; margin-bottom: 20px; margin-top: 15px; text-align: center; font-size: 12px; color: #808080;">
+					已读完所有微博，点击 <a href="#" class="find-weibo"
+						style="text-decoration: none; color: #F7691D;">发现</a> 查看更多精彩微博
+				</div>
+				<!-- 没微博了 -->
+
+			</div>
+
+		</div>
+		
+
+		<!-- 右边部分 -->
+		<div class="content-right">
+		
+			<div class="smallBgc">
+				<img src="../resources/images/smallBgc.png">
+			</div>
+			<!-- 用户信息 -->
+			<div class="user-infos">
+				<!-- 跳转到我的主页 -->
+				<div class="user-infos-name">
+					<a href="changeuser" id="bottom-nickName">用户昵称</a>
+				</div>
+				<div class="user-infos-fans">
+					<div class="user-infos-item">
+						<div>
+							<a href="#" id="starsCount">0</a>
+						</div>
+						<div class="user-infos-item-title">关注</div>
+					</div>
+					<div class="user-infos-item">
+						<div>
+							<a href="#" id="fansCount">0</a>
+						</div>
+						<div class="user-infos-item-title">粉丝</div>
+					</div>
+					<div class="user-infos-item">
+						<div>
+							<a href="#" id="weiboCount">0</a>
+						</div>
+						<div class="user-infos-item-title">微博</div>
+					</div>
+				</div>
+			</div>
+			<!-- 头像部分 -->
+			<div id="my-photo">
+				<!-- <form name="form0" id="form0"> -->
+				<a id="a-headImg"> <br> <label for="file0"
+					style="cursor: pointer;"><img
+						src="../resources/images/user.jpg" id="img0"
+						style="width: 65px; height: 65px; border-radius: 50%;"></label>
+				</a>
+				<!-- <a id="a-headImg">
+							<br> <label for="file0" style="cursor:pointer;"><img
+							src="" id="img0"
+							style="width: 65px; height: 65px; border-radius: 50%;"></label>
+							</a> -->
+				<!-- </form> -->
+			</div>
+			<!-- 右边下面剩余部分 -->
+			<div class="blank">
+				<div class="blank-title">
+					<a href="#">热门微博-内地</a>
+				</div>
+				<div class="public-line2"></div>
+				<div>
+					<ol class="hot-weibo-list" style="list-style:none;">
+						<a href="mine">
+							<li>已看完所以热门微博</li>
+						</a>
+
+					</ol>
+					<div class="see-more" style="padding-bottom:15px;">
+						<a class="previou-page" style="cursor:pointer">‹ 上一页</a>
+						<a class="next-page" style="cursor:pointer">下一页 ›</a>
+					</div>
+				</div>
+			</div>
+			<!-- 热门 -->
+			<!-- <div class="hot-news">
+				<div class="hot-news-title">
+					<a href="#">热门话题</a>
+				</div>
+				<div class="hot-news-list">
+					<ol>
+						<a href="#">
+							<li>#第一个到快递的是什么...#</li>
+						</a>
+						<a href="#">
+							<li>#中国人有多爱吃火锅...#</li>
+						</a>
+						<a href="#">
+							<li>#年轻人月薪多少才有安...#</li>
+						</a>
+
+					</ol>
+					<div class="see-more">
+						<a href="#">查看更多></a>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	</div>
+</body>
+<script>
+	$(function() {
+		// 鼠标滚动监听
+		$(document).bind('mousewheel DOMMouseScroll', function(event) { //on也可以 bind监听
+			//Chorme
+			var wheel = event.originalEvent.wheelDelta;
+			var detal = event.originalEvent.detail;
+			if (event.originalEvent.wheelDelta) { //判断浏览器IE,谷歌滚轮事件               
+				if (wheel > 0) { //当滑轮向上滚动时  
+
+				}
+				if (wheel < 0) { //当滑轮向下滚动时  
+					$(".nav").css("box-shadow", " 1px 1px 8px #ccc");
+
+				}
+			} else if (event.originalEvent.detail) { //Firefox滚轮事件  
+				if (detal > 0) { //当滑轮向下滚动时  
+					$(".nav").css("box-shadow", " 1px 1px 8px #ccc");
+				}
+				if (detal < 0) { //当滑轮向上滚动时  
+
+				}
+			}
+		});
+
+		//监听是否到底顶部或者底部
+		$(document).ready(
+				function() {
+					$(window).scroll(
+							function() {
+
+								if ($(document).scrollTop() <= 0) {
+									$(".nav").css("box-shadow", " 0 0 0 #fff");
+									 /* alert("到顶了哦"); */
+								}
+
+							/* 	var loading = false; */
+									if ($(document).scrollTop() >= $(document)
+											.height()
+											- $(window).height()-0.5) {
+										//添加提示---已到达底部,没有更多微博了
+										/* loading=true;
+									    $.toast({text:$(document).scrollTop()});
+										$.toast({text:$(document).height()});
+										$.toast({text:$(window).height()});  */
+										/* $.toast({text:"到底了哦...",icon:"info",position:"mid-center"}); */
+										 /*  alert("到底了哦..."); */
+									}
+								
+							});
+				});
+		
+	});
+
+		/* // 评论部分
+		$("#comment-icon").click(function() {
+
+			$(".comment").slideToggle();
+		}); */
+		// 评论的按钮										
+		/* $(".comment-input").bind("input propertychange", function(event) {
+			var com = ($(".comment-input").val().trim())
+			if (com != '') {
+				$(".comment-button").removeAttr("disabled")
+				$(".comment-button").css("background-color", "#FA7D3C")
+			}
+		}); */
+		/* //评论列表
+		$("#according-hot").click(function() {
+			$(".comment-list-context").show();
+		});
+		$("#according-time").click(function() {
+			$(".comment-list-context").hide();
+
+		}); */
+
+		// 评论部分
+</script>
+
+
+<script type="text/javascript"
+	src="../resources/js/common/jquery.screw.js"></script>
+<script type="text/javascript" src="../resources/js/common/common.js"></script>
+<script type="text/javascript" src="../resources/js/common/weibocommon.js"></script>
+<script type="text/javascript" src="../resources/js/common/minecommon.js"></script>
+<script type="text/javascript" src="../resources/js/common/commentandreply.js"></script>
+<script type="text/javascript" src="../resources/js/frontend/head.js"></script>
+<script type="text/javascript" src="../resources/js/frontend/mine.js"></script>
+<script type="text/javascript"
+	src="../resources/js/frontend/mineoperation.js"></script>
+<!-- @功能 -->
+<script type="text/javascript"
+	src="../resources/js/common/jquery.atwho.min.js"></script>
+<script type="text/javascript"
+	src="../resources/js/common/jquery.caret.min.js"></script>
+
+<!-- 搜索提示 -->
+<script
+	src="../resources/js/common/hot-search/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script>
+		$(function() {				
+					 
+		});
+		
+		/**
+		*上传图片
+		*/
+		$("#upimg-one").click(function() {
+				$(".all-upimg").show();
+		});
+		// 图片2
+		$(document).on("change",".weibo-img",function(e){
+			var id = e.currentTarget.dataset.id;
+			var name=".upimg-"+id;
+			var objUrl = getObjectURL(this.files[0]);		
+			$(name).attr("src", objUrl);	
+		});
+		$(".all-upimg").on("change",".weibo-img:last-child",function(){
+			if (this.files[0].name !== '') {
+				$(".special-img2").hide();
+				$(".delete-img").show();				
+			}
+			var tempId=new Date().getTime();
+			if($(".weibo-img").length<10){
+				var html = `<label for="upimg-${tempId}" id="label-${tempId}"><div>
+					<span class="delete-img" data-id="${tempId}">x</span>
+					<div class="special-img2" >+</div>
+					<img src="" class="upimg-${tempId}"> 
+					</div></label>
+					<input type="file" id="upimg-${tempId}" data-id="${tempId}" class="weibo-img"/>`
+					$(".all-upimg").append(html);
+			}
+			});
+		$(".all-upimg-delete").click(function(){
+			$(".all-upimg").hide();
+		});
+		// 删除图片
+		$(document).on("click",".delete-img",function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			var id=e.currentTarget.dataset.id;
+			var labelId="#label-"+id;
+			var upimgId="#upimg-"+id;
+			$(labelId).remove();
+			$(upimgId).remove();
+		});
+
+		</script>
+
+</html>

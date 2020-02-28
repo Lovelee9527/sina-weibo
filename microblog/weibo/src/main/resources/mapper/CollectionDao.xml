@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.gdcp.weibo.dao.CollectionDao">
+     <insert id="insertCollection" useGeneratedKeys="true" keyProperty="collectionId"
+		keyColumn="collection_id">
+        INSERT INTO
+        tb_collection(user_id,state,
+        create_time,last_edit_time,weibo_id)
+        VALUES(#{userId},#{state},
+        #{createTime},#{lastEditTime},#{weiboId})
+     </insert>
+     
+     <select id="queryCollectionList" resultType="com.gdcp.weibo.entity.Collection">
+		SELECT
+		*
+		FROM
+		tb_collection
+		<where>
+			<if
+				test="collectionCondition!=null and collectionCondition.userId!=null">
+				AND user_id = #{collectionCondition.userId}
+			</if>
+			<if test="collectionCondition!=null and collectionCondition.weiboId!=null">
+				AND weibo_id = #{collectionCondition.weiboId}
+			</if>
+			 <if test="collectionCondition!=null and collectionCondition.state!=null">
+	           AND state = #{collectionCondition.state}
+	       </if>
+		</where>
+		Order by
+		last_edit_time DESC
+	</select>
+	
+	<select id="queryCollectionCount" resultType="int">
+		SELECT
+		count(1)
+		FROM
+		tb_collection
+		<where>
+			<if
+				test="collectionCondition!=null and collectionCondition.userId!=null">
+				AND user_id = #{collectionCondition.userId}
+			</if>
+			<if test="collectionCondition!=null and collectionCondition.weiboId!=null">
+				AND weibo_id = #{collectionCondition.weiboId}
+			</if>
+			<if test="collectionCondition!=null and collectionCondition.state!=null">
+	           AND state = #{collectionCondition.state}
+	       </if>
+		</where>
+	</select>
+	
+	<delete id="deleteCollection" parameterType="com.gdcp.weibo.entity.Collection">
+	    DELETE 
+	    FROM tb_collection
+	    <where>
+	      <if test="collection!=null and collection.state!=null">
+	           AND state = #{collection.state}
+	       </if>
+	        <if test="collection!=null and collection.weiboId!=null">
+	           AND weibo_id = #{collection.weiboId}
+	       </if>
+	       AND user_id = #{collection.userId}
+	    </where>
+	</delete>
+ 
+ </mapper>

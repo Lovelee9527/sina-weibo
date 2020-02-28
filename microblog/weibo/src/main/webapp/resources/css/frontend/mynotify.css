@@ -1,0 +1,290 @@
+body{
+	margin: 0;
+	padding: 0;
+	/* background: url(../images/mine-bgc.png); */
+	background-color: skyblue;
+	padding-top: 8px;
+}
+
+#receive-praise-list div:last-child{
+	margin-bottom:20px;
+}
+
+#comment-to-list div:last-child{
+	margin-bottom:20px;
+}
+
+/* 鍐呭閮ㄥ垎 */
+.content {
+	margin: 40px auto 0 auto;
+	min-height: 714px;
+	width: 1020px;
+	background-color: rgba(0, 0, 0, .08);	
+	display: flex;	
+	position: relative;
+	
+}
+.content-left{
+	width: 150px;
+	height:714px ;
+	position: fixed;	
+	box-sizing: border-box;
+	
+}
+.content-left div{
+	width: 150px;
+	
+}
+.content-left-title{
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 15px;
+	width: 150px;
+}
+.content-left-list  ul{
+	cursor: pointer; 
+	width: 150px;
+	
+}
+.content-left-list  ul  li{
+	margin-bottom: 14px;
+	
+	color: #fff;
+	font-size: 13px;
+}
+
+.content-middle{
+	padding-top: 15px;
+	width: 600px;
+	min-height: 200px;
+	margin-left: 250px;
+	/* display: none; */
+
+}
+.content-middle-top{
+	width: 600px;
+	height: 35px;
+	background-color: #fff;
+	position: relative;
+
+}
+.content-middle-top span{
+	margin-left: 20px;
+	font-size: 12px;
+	line-height: 35px;
+}
+.content-middle-top input{
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 4px #ccc;
+float: right;
+margin: 5px 10px auto auto;
+	width: 170px;
+	height: 20px;
+}
+.content-middle-top span:hover{
+	color: #FA7D3C;
+	cursor: pointer;
+}
+#comment-search{
+	position: absolute;
+	top: 0;
+	right: 20px;
+	color: #b4becd;
+	font-size: 17px;
+}
+/* 璇勮 */
+.other-comment-footer div a:hover{
+	color: #FA7D3C;
+}
+.delete-comment:hover{
+	color: #FA7D3C;
+	
+}
+.delete-comment{
+	
+		color: #696e78;
+		top: 10px;
+		position: absolute;
+		right: 20px;
+		font-weight: bold;
+		cursor: pointer;
+}
+.comment-source{
+	text-decoration: none;
+	color:#333;
+	font-size: 13px;
+	word-wrap: break-word;
+}
+.comment-source:hover{
+		color: #FA7D3C;
+}
+.alert-remove{
+	color:#696e78 ;
+	font-weight: bold;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.alert-remove:hover{
+	color: #FA7D3C;
+	cursor: pointer;
+}
+.other-comment-footer div{
+	width: 33.3%;
+	height: 25px;
+	text-align: center;
+	line-height: 30px;
+	border-right: 1px solid #d9d9d9;
+	cursor: pointer;
+}
+.other-comment-footer div {
+color: #808080;
+
+}
+.other-comment-footer div:hover{
+	color: #FA7D3C;
+}
+/* 璧� */
+.support{
+	padding-top: 15px;
+	position: absolute;
+	left: 0px;
+	position: relative;
+	width: 600px;
+	box-sizing: border-box;
+	/* display: none; */
+	
+	
+	
+	
+}
+.support-title{
+	width: 600px;
+	height:35px;
+	background-color: #fff;
+	margin-left: 250px;
+}
+.support-title span{
+	line-height: 35px;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+.support-user{
+	font-size: 13px;
+	color: #808080;
+	position: absolute;
+	top: 30px;
+	text-decoration: none;
+}
+.support-user:hover{
+	color: #FA7D3C;
+	
+}
+.support-source{
+text-decoration: none;
+	color: #333;
+	font-size: 13px;
+	word-wrap: break-word;
+}
+.support-response:hover,.support-source:hover{
+	color: #FA7D3C;
+}
+.support-response{
+	width: 600px;
+	height: 35px;
+	background-color: #fff;
+	border-top: 1px solid #f2f2f5;
+	margin-left: 250px;
+	text-align: center;
+	line-height: 35px; 
+	color:#808080 ;
+	font-size: 13px;
+	cursor: pointer;
+}
+/* 鑹剧壒鎴戠殑 */
+.callme-middle{
+	padding-top: 15px;
+	width: 600px;
+	min-height: 200px;
+	margin-left: 250px;
+/* 	display: none; */
+}
+.callme-middle-top{
+	width: 600px;
+	height: 35px;
+	background-color: #fff;
+	position: relative;
+
+}
+.callme-middle-top span{
+	margin-left: 20px;
+	font-size: 12px;
+	line-height: 35px;
+}
+.callme-middle-top input{
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 4px #ccc;
+float: right;
+margin: 5px 10px auto auto;
+	width: 170px;
+	height: 20px;
+}
+.callme-middle-top span:hover{
+	color: #FA7D3C;
+	cursor: pointer;
+}
+#callme-search{
+	position: absolute;
+	top: 0;
+	right: 20px;
+	color: #b4becd;
+	font-size: 17px;
+}
+.callme-source-user:hover{
+	color: #FA7D3C;
+}
+.callme-source-user{
+	font-weight: bold;
+	font-size: 12px;
+	color: #333;
+	margin-left: 75px;
+	text-decoration: none;
+}
+.callme-footer div{
+	width: 25%;
+	height: 25px;
+	text-align: center;
+	line-height: 30px;
+	border-right: 1px solid #d9d9d9;
+	cursor: pointer;
+}
+.callme-footer div {
+color: #808080;
+
+}
+.callme-footer div:hover{
+	color: #FA7D3C;
+}
+/* 添加部分 */
+.callmelink{
+	color: #FA7D3C;
+	text-decoration: none;
+	font-size: 14px;
+	
+}
+.callme-username{
+	font-size: 15px;
+	font-weight: bold;
+	color: #333;
+	text-decoration: none;
+	top: 25px;
+	position: absolute;
+	
+	}
+	.callme-username:hover{
+		color: #FA7D3C;
+	}

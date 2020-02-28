@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gdcp.weibo.dao.CommentDao">
+<resultMap type="com.gdcp.weibo.entity.Comment" id="commentMap-temp">
+		<id column="comment_id" javaType="Long" property="commentId" />
+		<result property="content" column="content" />
+		<result property="time" column="time" />
+		<result property="commentCount" column="comment_count" />
+		<association property="weibo" column="weibo_id"
+			javaType="com.gdcp.weibo.entity.Weibo">
+			<id column="weibo_id" property="weiboId" />
+			<result column="weibo_id" property="weiboId" />
+			<result column="w_content" property="content" />
+		</association>
+		<association property="user" column="user_id"
+			javaType="com.gdcp.weibo.entity.User">
+			<id column="user_id" property="userId" />
+			<result column="head_img" property="headImg" />
+			<result column="nick_name" property="nickName" />
+		</association>
+	</resultMap>
+	
+	<resultMap type="com.gdcp.weibo.entity.Comment" id="commentMap">
+		<id column="comment_id" javaType="Long" property="commentId" />
+		<result property="content" column="content" />
+		<result property="time" column="time" />
+		<result property="commentCount" column="comment_count" />
+		<association property="weibo" column="weibo_id"
+			javaType="com.gdcp.weibo.entity.Weibo">
+			<id column="weibo_id" property="weiboId" />
+			<result column="weibo_id" property="weiboId" />
+		</association>
+		<association property="user" column="user_id"
+			javaType="com.gdcp.weibo.entity.User">
+			<id column="user_id" property="userId" />
+			<result column="head_img" property="headImg" />
+			<result column="nick_name" property="nickName" />
+		</association>
+	</resultMap>
+
+	<select id="queryCommentListByWeiboId" resultMap="commentMap-temp">
+		SELECT
+		comment_id,
+		c.weibo_id,
+		c.content,
+		time,
+		c.user_id,
+		u.head_img,
+		u.nick_name,
+		w.content AS w_content,
+        w.weibo_id
+		FROM
+		tb_comment c,
+		tb_user u,
+		tb_weibo w
+		WHERE
+		c.weibo_id=#{weiboId}
+		AND 
+		c.user_id = u.user_id
+		AND 
+		c.weibo_id=w.weibo_id
+		order by
+		time desc
+	</select>
+	
+	<select id="queryCommentListByUserId" resultMap="commentMap-temp">
+		SELECT
+		comment_id,
+		c.weibo_id,
+		c.content,
+		time,
+		c.user_id,
+		u.head_img,
+		u.nick_name,
+		w.content AS w_content,
+		w.user_id AS w_user_id,
+        w.weibo_id
+		FROM
+		tb_comment c,
+		tb_user u,
+		tb_weibo w
+		WHERE
+		c.user_id=#{userId}
+		AND 
+		c.user_id = u.user_id
+		AND
+		c.weibo_id = w.weibo_id
+		order by
+		time desc
+	</select>
+
+	<insert id="insertComment" useGeneratedKeys="true"
+		keyProperty="commentId" keyColumn="comment_id">
+		INSERT INTO
+		tb_comment(weibo_id,content,time,
+		user_id)
+		VALUES(#{weibo.weiboId},#{content},
+		#{time},#{user.userId})
+	</insert>
+
+ <select id="queryComment" resultMap="commentMap">
+		SELECT
+		*
+		FROM
+		tb_comment c,
+		tb_user u
+		<where>
+			<if
+				test="commentCondition!=null and commentCondition.content!=null">
+				AND content = #{commentCondition.content}
+			</if>
+			<if test="commentCondition!=null and commentCondition.weibo!=null and commentCondition.weibo.weiboId != null">
+				AND c.weibo.weibo_id =#{commentCondition.weibo.weiboId}
+			</if>
+			<if test="commentCondition!=null and commentCondition.user!=null and commentCondition.user.userId!=null">
+				AND c.user.user_id = #{commentCondition.user.userId}
+			</if>
+			AND c.user_id = u.user_id
+		</where>
+	</select>
+	
+	<select id="queryCommentCount" resultType="int">
+		SELECT
+		count(1)
+		FROM
+		tb_comment c,
+		tb_user u
+		<where>
+			<if test="commentCondition!=null and commentCondition.content!=null">
+				AND content like
+				'%${commentCondition.content}%'
+			</if>
+			<if test="commentCondition!=null and commentCondition.weibo!=null and commentCondition.weibo.weiboId != null">
+				AND c.weibo_id =#{commentCondition.weibo.weiboId}
+			</if>
+			<if test="commentCondition!=null and commentCondition.user!=null and commentCondition.user.userId!=null">
+				AND c.user_id = #{commentCondition.user.userId}
+			</if>
+			AND c.user_id = u.user_id
+		</where>
+	</select>
+	
+	<select id="queryCommentByCommentId" resultMap="commentMap">
+	    SELECT
+	    comment_id,
+	    weibo_id,
+	    content,
+	    time,
+	    c.user_id,
+	    nick_name,
+	    head_img
+	    FROM
+		tb_comment c,
+		tb_user u
+	    WHERE
+	    c.comment_id= #{commentId}
+	    AND 
+	    c.user_id = u.user_id
+	</select>
+	
+    <select id="queryCommentCountByWeiboId" resultType="int">
+		SELECT
+		count(1)
+		FROM
+		tb_comment 
+		WHERE
+		weibo_id=#{weiboId}
+	</select>
+	
+	<delete id="deleteCommentById">
+	   DELETE
+	    FROM tb_comment
+	    WHERE
+	      user_id = #{userId}
+	    AND
+	      comment_id = #{commentId}
+	</delete>
+	
+</mapper>

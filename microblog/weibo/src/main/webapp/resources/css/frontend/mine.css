@@ -1,0 +1,655 @@
+body {
+	margin: 0;
+	padding: 0;
+	/* background: url(../images/mine-bgc.png); */
+	background-color:skyblue;
+}
+
+/* 上传图片 */
+.content-middle{
+	position: relative;
+}
+.all-upimg{
+	top: 124px;
+	left: 14px;
+	z-index: 999999;
+	position: absolute;
+	width: 303px;
+	overflow: hidden;
+	max-height: 300px;
+	
+	background-color: #fff;
+	display: none;	
+	padding-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding-left: 5px;
+	box-shadow: 1px 1px 2px #ccc;
+	padding-bottom: 10px;
+}
+.all-upimg img{
+	width:80px;
+	height:80px;	
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: 10px;
+	
+}
+.all-upimg input{
+	display: none;
+}
+.all-upimg div{
+	display: inline-block;
+	position: relative;
+	
+}
+.all-upimg div div{
+	width: 80px;
+	height: 80px;
+	background-color: #fff;
+	border: 2px dashed #ccc;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 65px;
+	box-sizing: border-box;
+	color: #ccc;
+}
+.all-upimg-title{
+	display: block;
+	font-size: 14px;
+	font-weight: bolder;
+	margin-left: 10px;
+	color: #333;
+	
+}
+.all-upimg-delete{
+	float: right;
+	font-size: 20px;
+	color: #696e78;
+	cursor: pointer;
+	margin-top: -6px;
+	margin-right: 8px;
+}
+.all-upimg-delete:hover{
+	color: #F7691D;
+}
+.delete-img{
+	position: absolute;
+	cursor: pointer;
+	left: 75px;
+	top: 10px;
+	z-index: 100000;
+	display: none;
+	color: #fff;
+}
+
+.content {
+	margin: 40px auto 0 auto;
+	min-height: 714px;
+	width: 1020px;
+	/* background-color: rgba(0, 0, 0, .08); */
+	display: flex;
+}
+
+/* 鍏叡鐧界嚎 */
+.public-line {
+	border-bottom: 1px solid #abd1e8;
+}
+
+/* 宸﹁竟閮ㄥ垎 */
+.content-left {
+	width: 140px;
+	position:fixed;
+	height:720px;
+	left:260px;
+	 background-color: rgba(0,0,0,.08);
+}
+
+/* 宸﹁竟涓婇潰 */
+.content-left-top {
+	margin-top: 20px;
+	height: 100px;
+	/* margin-left: 15px; */
+	margin-bottom: 10px;
+}
+
+.content-left-top div {
+	box-sizing: border-box;
+	width: 140px;
+	height: 32px;
+	line-height: 32px;
+	font-weight: bold;
+}
+
+.content-left-top div a {
+	color: #fff;
+	text-decoration: none;
+	margin-left: 20px;
+}
+
+.content-left-top div:hover {
+	background-color: #abd1e8;
+}
+
+/* 宸﹁竟涓棿 */
+.content-left-middle {
+	margin-top: 10px;
+	height: 30px;
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+.content-left-middle div {
+	height: 25px;
+	line-height: 25px;
+	width: 140px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+
+.content-left-middle div:hover {
+	background-color: #abd1e8;
+}
+
+.content-left-middle div a {
+	color: #fff;
+	text-decoration: none;
+	margin-left: 20px;
+}
+
+/* 宸﹁竟涓嬮潰 */
+.content-left-bottom {
+	margin-top: 20px;
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+.content-left-bottom div {
+	height: 25px;
+	/* line-height: 25px; */
+	width: 140px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+
+.content-left-bottom div:hover {
+	background-color: #abd1e8;
+}
+
+.content-left-bottom div a {
+	color: #fff;
+	text-decoration: none;
+	margin-left: 20px;
+}
+
+/* 涓棿閮ㄥ垎 */
+.content-middle {
+	margin-top: 20px;
+	width: 600px;
+	height: 170px;
+	background-color: #fff;
+	border-radius: 2px;
+}
+
+.content-middle-title {
+	margin-left: 10px;
+	color: #0077AA;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	letter-spacing: 3px;
+}
+
+.content-middle-context {
+	margin: 0 auto;
+	width: 570px;
+	position: relative;
+}
+
+.content-middle-context form textarea {
+	width: 570px;
+	height: 80px;
+	border: 1px solid #fa7d3c;
+	box-sizing: border-box;
+}
+
+.content-middle-context form button {
+	width: 80px;
+	height: 30px;
+	background-color: #fa7d3c;
+	border: none;
+	color: #fff;
+	border-radius: 3px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	cursor: pointer;
+}
+
+/* 鏀瑰彉鍘熸湁涓婁紶鏂囦欢鍚嶅瓧 */
+.uploadImg {
+	display: none;
+}
+
+.content-middle-context form label div {
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #7cadcd;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+/* 鍙宠竟閮ㄥ垎 */
+.content-right {
+	position: relative;
+	 background-color: rgba(0,0,0,.08);
+	 position:fixed;
+	 right:259px;
+	 height:720px;
+	 width:260px;
+}
+
+.smallBgc {
+	margin-left: 10px;
+
+}
+
+.smallBgc img {
+	margin-top: 20px;
+	width: 240px;
+	height: 80px;
+}
+
+/* 鐢ㄦ埛淇℃伅 */
+.user-infos {
+	width: 240px;
+	background-color: #fff;
+	height: 70px;
+	margin-left: 10px;
+	margin-top: -4px;
+	padding-top: 20px;
+}
+
+.user-infos-name {
+	width: 240px;
+	text-align: center;
+}
+
+.user-infos-name a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+
+.user-infos-name a:hover {
+	color: #fa7d3c;
+}
+
+/* 鐢ㄦ埛淇℃伅绮変笣閮ㄥ垎 */
+.user-infos-fans {
+	display: flex;
+	text-align: center;
+	width: 240px;
+}
+
+.user-infos-item {
+	margin-top: 5px;
+	width: 240px;
+	border-right: 1px solid #ccc;
+}
+
+.user-infos-item:last-child {
+	border-right: none;
+}
+
+.user-infos-item-title {
+	font-size: 12px;
+	color: #808080;
+}
+
+.user-infos-item a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+
+.user-infos-item a:hover {
+	color: #fa7d3c;
+}
+
+/* 澶村儚閮ㄥ垎 */
+#my-photo {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 32px;
+	right: 62px;
+}
+
+/* 鍙宠竟鏈�涓嬮潰 */
+.blank {
+	width: 240px;
+	min-height: 80px;
+	background-color: #fff;
+	margin: 10px auto 0 10px;
+}
+
+.blank-title {
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+
+.blank-title a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+
+.blank-title a:hover {
+	color: #fa7d3c;
+}
+
+/* 鍏叡绾�2 */
+.public-line2 {
+	border: 1px solid #f2f2f9;
+}
+
+.blank div ol a {
+	text-decoration: none;
+	color: #333;
+	font-size: 15px;
+}
+
+.blank div ol a:hover {
+	color: #fa7d3c;
+}
+
+.blank div ol li {
+	margin-bottom: 20px;
+
+}
+
+.see-more {
+	text-align: center;
+
+}
+
+.see-more a {
+	text-decoration: none;
+	color: #333;
+	font-size: 15px;
+}
+
+.see-more a:hover {
+	color: #fa7d3c;
+}
+
+/* 鐑棬 */
+.hot-news {
+	width: 240px;
+	height: 205px;
+	background-color: #fff;
+	margin: 10px auto 0 10px;
+	padding-top: 10px;
+}
+
+.hot-news-list ol a {
+	list-style: none;
+	text-decoration: none;
+	color: #333;
+}
+
+.hot-news-list ol a :hover {
+	color: #fa7d3c;
+}
+
+.hot-news-list ol a li {
+	margin-bottom: 20px;
+}
+
+
+.hot-news-title {
+	text-align: center;
+}
+
+.hot-news-title a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+
+.hot-news-title a:hover {
+	color: #fa7d3c;
+}
+.content-middle-all{
+	display:flex;
+	
+	 background-color: rgba(0,0,0,.08);
+	 margin-left:150px;
+	
+}
+.publish{
+	width:600px;
+	/* min-height:510px; */
+	/* background-color:#fff; */
+	margin-top:30px;
+}
+/* 一个微博框 */
+.article{
+	width: 600px;
+	min-height: 160px;
+	background-color: #fff;
+	/* margin-top:20px; */
+	margin-bottom:10px;
+}
+.article:last-child{
+	/* margin-bottom:30px; */
+}
+/* 微博头部 */
+.article-header{
+	display: flex;
+	position: relative;
+}
+/* 头像 */
+.article-header div img{
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	margin: 15px auto auto 15px;
+}
+.article-info{
+	height: 55px;
+	margin: 20px auto auto 10px;
+}
+/* 名字 */
+.article-user a{
+	font-size:15px ;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+.article-user a:hover{
+	color: #FA7D3C;
+}
+/* 时间 */
+.article-time{
+	margin-top: 5px;
+}
+.article-time a{
+	font-size: 12px;
+	text-decoration: none;
+	color: #a18080;	
+}
+.article-time a:hover{
+	color: #FA7D3C;
+}
+/* 箭头 */
+.arrow{
+	height: 55px;
+	line-height: 55px;
+	margin-right: 15px;
+}
+
+.arrow span:hover{
+	color: #FA7D3C;
+	cursor: pointer;
+}
+.arrow-context{
+	position: absolute;
+	display: none;
+	right: 24px;
+	top:32px;
+	box-shadow: 1px 1px 4px 1px #ccc;
+	z-index: 999;
+	background-color: #fff;
+}
+.arrow-context ul{
+	margin-right: 8px;
+}
+.arrow-context ul li{
+	list-style: none;
+	font-size: 12px;
+	line-height: 25px;
+	margin-left: -30px;
+	
+}
+.arrow-context ul li:hover{
+	background-color: #f2f2f5;
+}
+.arrow-context ul li a{
+	text-decoration: none;
+	text-align: center;
+	color: #333;
+	
+}
+.arrow-context ul li a:hover{
+	color: #FA7D3C;
+}
+/* 微博正文 */
+.article-context{
+	
+}
+.article-context-title{
+	max-width:480px ;
+	min-height: 30px;
+	
+	word-wrap: break-word;
+	margin: 0 auto;
+	margin-left: 80px;
+	
+ }
+ .article-context-img{
+	 	max-width:400px ;
+	 margin-top: 10px;
+	 margin-left: 80px;
+	 flex-wrap: wrap;
+ }
+ .article-context-img img{
+	width: 105px;
+	height: auto;
+	  margin-left:5px;
+	 
+	
+ }
+ /* 底部 */
+ .article-footer{
+	 width: 100%;
+	 height:40px ;
+	border-top: 1px solid #f2f2f5;
+	margin-top: 5px;
+	box-sizing: border-box;
+	display: flex;
+ }
+ .article-footer div{
+	 margin-top: 10px;
+	 width: 25%;
+	 height: 60%;
+	 border-right: 1px solid #d9d9d9;
+	 text-align: center;
+	 color: #808080;
+	 cursor:pointer;
+	/* background-color: #0077AA; */
+ }
+ .article-footer div:hover{
+	 color: #FA7D3C;
+ }
+ .article-footer div:last-child{
+	 border-right: none;
+ }
+ .footer-font{
+	 font-size: 12px;	
+	 margin-left: 5px;
+ }
+ /* 评论 */
+  .comment{
+	  display: flex;
+	  background-color: #f2f2f5;
+	  min-height: 0px;
+	  width:600px;
+	  flex-wrap: wrap;
+	  display: none;
+  }
+ .comment-first{
+	 width: 100%;
+	 display: none;
+	 height: 100px;	
+	 border-top: 1px solid #f2f2f5;
+	 display: flex;
+	 position: relative;
+	 border-bottom: 1px solid #d9d9d9;
+ }
+ .comment-first div button{
+	 width: 70px;
+	 position: absolute;
+	 right: 20px;
+	 top: 58px;
+	 border: none;
+	 height: 30px;
+	/*  background-color: #ffc09f;  */
+	  background-color: #FA7D3C;
+	 color: #fff;
+	 border-radius: 2px;
+	 cursor: pointer;
+	 
+ }
+ .comment-list{
+ 	 width: 480px;
+ 	 min-height: 80px;
+	/*  padding-top: 15px; */
+	padding-bottom: 10px;
+ 	 border-top: 1px solid #f2f2f5;
+ 	 display: flex;	
+ 	 border-bottom: 1px sol #f2f2f5;
+	 flex-wrap: wrap;
+  }
+  .comment-list div:first-child{
+	  font-size: 12px;
+	 /*  width: 90%; */
+	 margin-right:10px;
+  }
+   .comment-list div{
+	 margin-right:10px;
+  }
+  .comment-list div:first-child span:first-child:hover{
+	  color: #FA7D3C;
+  }
+  .comment-list div:first-child span:first-child{
+	  margin-left: 5px;
+	  cursor: pointer; 
+  }
+  .comment-list div:first-child span{
+	  margin-left: 5px;
+  }
+  .comment-list div:first-child span:last-child{
+	  margin-left: 0;
+  }
+  

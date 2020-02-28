@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主页</title>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<!-- import导入头部 导航栏部分 -->
+<link rel="import" href="head.html" id="page1" />
+<script type="text/javascript" src="../resources/js/frontend/head.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/frontend/homepage.css">
+	<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/weibocommon.css">
+<link rel="shortcut icon" href="../resources/images/weibo.ico">
+<link rel="stylesheet" type="text/css"
+	href="../resources/mineIcon/iconfont.css" />
+<!-- JQuery必需  -->
+<script src="../resources/js/common/jquery/jquery.min.2.2.4.js"></script>
+<script type="text/javascript"
+	src="../resources/js/common/jquery.screw.js"></script>
+<!--自定义-->
+<!-- toast必需链接 -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/jquery.toast.min.css">
+<script type="text/javascript"
+	src="../resources/js/common/jquery.toast.min.js"></script>
+
+<style type="text/css">
+body {
+	background: url(../resources/images/friendBgc.jpg);
+}
+
+/* 放大图片 */
+.article-context-img img {
+cursor:url("../resources/images/f1.png"),auto;
+}
+.bigimg-tip{
+	cursor:url("../resources/images/f2.png"),auto;	
+}
+
+</style>
+</head>
+<body>
+	<!-- 导航栏部分 -->
+	<script type="text/javascript">
+         document.write(page1.import.body.innerHTML);
+	</script>
+	<!-- 导航栏部分 -->
+
+
+	<div class="content-middle">
+		<!-- 头像背景部分 -->
+		<img src="../resources/images/friendbgcsmall.jpg"
+			style="width: 100%; height: 280px;">
+		<!-- 我的头像 -->
+		<div id="div-my-headImg">
+			<input type="file" name="file0" id="file0" multiple="multiple"
+				style="display: none;" /><br> <label for="file0"><img
+				src="../resources/images/user.jpg" id="my-headImg"
+				style="width: 100px; height: 100px; border-radius: 50%; position: absolute; top: 40px; left: 400px; box-shadow: -1px -1px 3px #fff;"></label>
+		</div>
+		<!-- 他人的头像 -->
+		<div id="div-his-headImg">
+			<img id="his-headImg" src="../resources/images/user.jpg"
+				style="width: 100px; height: 100px; border-radius: 50%; position: absolute; top: 40px; left: 400px; box-shadow: -1px -1px 3px #fff;">
+		</div>
+		<!-- 用户名和性别 -->
+		<div
+			style="position: absolute; top: 145px; left: 285px; font-size: 19px; color: #fff; text-align: center;">
+
+			<span style="margin-left: 50px;" id="nickName">新浪ggkkk</span> <span
+				style="font-weight: bold;" class="sex">♂</span>
+
+			<!-- 自行判断男女 ，女生符号 ♀ -->
+			<div
+				style="display: block; margin-left: 30px; margin-top: 5px; width: 270px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; text-align: center;"
+				><a class="profile-a" id="profile" style="color: #fff;text-decoration: none;cursor: pointer;style="display: block; margin-left: 30px; margin-top: 5px; width: 270px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; text-align: center;"">一句话介绍一下自己，让别人更了解你。</a></div>
+		</div>
+		<!-- 自行判断男女 ，女生符号 ♀ -->
+
+		<!-- 关注与私信 -->
+		<div id="relation-private"
+			style="display: flex; position: absolute; top: 200px; left: 325px; font-size: 14px; color: #fff;">
+			<div class="follow"
+				style="cursor: pointer; background-color: #FA7D3C; width: 110px; height: 32px; text-align: center; line-height: 32px; border-radius: 3px;">+关注</div>
+			<!-- 自行判断关注状态，关注显示 ✔已关注  -->
+			<div
+				style="cursor: pointer; background-color: #676c76; width: 110px; height: 32px; text-align: center; line-height: 32px; border-radius: 3px; margin-left: 20px;">
+				<!-- <span class="sex"></span> -->
+				<a style="text-decoration: none; color: #fff;" class="mid-sex">性别</a>
+				<span class="sex"></span>
+			</div>
+		</div>
+		<script type="text/javascript">
+		/* 立刻隐藏掉，用时再显示，用户体验更好 */
+		$("#relation-private").hide();
+		</script>
+
+		<!-- 头像背景部分 -->
+
+		<div id="mid-center"
+			style="color: #333; font-weight: bold; font-size: 17px; line-height: 40px; width: 100%; height: 40px; background-color: #fff; text-align: center; margin-top: -5px;">
+			主页</div>
+		<!-- 内容部分 -->
+		<div
+			style="display: flex; width: 100%; min-height: 100px; padding-top: 20px;">
+			<div style="width: 285px; min-height: 100px;">
+				<!-- 粉丝，关注，微博 -->
+				<div class="follow-fans-article">
+					<div>
+						<a class="follow-switch" href="#" id="starsCount">0</a><br>
+						<sapn style="font-size: 12px;color: #808080;">关注</sapn>
+					</div>
+					<div>
+						<a class="fans-switch" href="#" id="fansCount">0</a><br>
+						<sapn style="font-size: 12px;color: #808080;">粉丝</sapn>
+					</div>
+					<div>
+						<a href="#" class="weibo-switch" id="weiboCount">0</a><br>
+						<sapn style="font-size: 12px;color: #808080;">微博</sapn>
+					</div>
+				</div>
+				<!-- 粉丝，关注，微博 -->
+				<!-- 动态显示，二选一 -->
+				<!-- 个人信息 -->
+				<div class="introduce" style="display: none;">
+					<div>
+						✎省份：<span id="province">其他</span>
+					</div>
+					<div>
+						✎城市：<span id="city">其他</span>
+					</div>
+					<div>
+						✎生日：<span id="birthday">1997-02-09</span>
+					</div>
+					<div>
+						✎性别：<span id="introduce-sex">男</span>
+					</div>
+					<div>
+						✎个人简介：<span id="introduce-profile">这个人很懒，还未说什么...</span>
+					</div>
+				</div>
+				<!-- 个人信息 -->
+				<!-- 编辑资料 -->
+				<div id="personal-data"
+					style="width: 100%; height: 120px; background-color: #fff; margin-top: 15px;">
+					<div
+						style="width: 100%; height: 30px; background-color: #fff; border-bottom: 1px solid #f2f2f5; margin-bottom: 10px;"></div>
+					<div
+						style="font-size: 12px; color: #333; height: 40px; border-bottom: 1px solid #d9d9d9;">
+						<span style="margin-left: 15px;">个人资料完成度</span> <span
+							style="font-weight: bold; font-size: 18px;"
+							id="completeness-data">40%</span>
+						<div
+							style="width: 90%; height: 3px; background-color: #f2f2f5; margin: 0 auto;">
+							<div style="width: 40%; height: 100%; background-color: #F7691D;"
+								id="completeness-width"></div>
+						</div>
+
+					</div>
+					<div class="edit-info">
+						<a href="#" id="changeUser">编辑个人资料></a>
+					</div>
+				</div>
+				<!-- 编辑资料 -->
+				<!-- 动态显示，二选一 -->
+			</div>
+			<!-- 微博部分 -->
+			<div class="weibo-contentlist"
+				style="width: 595px; min-height: 0px; margin-left: 20px;">
+				<!-- 标题和搜索框 -->
+				<div class="publish-title">
+					<div>
+						<span>微博</span>
+					</div>
+					<!-- <input type="text" placeholder="搜索该用户的微博" /> <a href=""
+						style="text-decoration: none; float: right; margin-right: -160px;">
+						<span class="iconfont" style="color: #b5b8bd;">&#xe62d;</span>
+					</a> -->
+				</div>
+				<!-- 标题和搜索框 -->
+				<!-- 所有微博 -->
+				<div class="all-article" style="width: 100%; min-height: 0px;"
+					id="weiboItem">
+					<!-- 一条微博 -->
+					<!-- <div class="article" >
+						<div class="article-header">
+							点击图片跳转到页面
+							<div>
+								<a href=""><img src="../resources/images/lunbotu1.png" /></a>
+							</div>
+							<div class="article-info">
+								<div class="article-user">
+									<a href="">新浪微博</a>
+								</div>
+								<div class="article-time">
+									<a href="">11月15日 12：39</a>
+								</div>
+							</div>
+							<div class="arrow">
+								<span class="iconfont" id="arrow">&#xe625;</span>
+							</div>
+							<div class="arrow-context">
+								<ul>
+									<li><a href="">帮上头条</a></li>
+									<li><a href="">屏蔽这条微博</a></li>
+									<li><a href="">屏蔽新浪微博</a></li>
+									<li><a href="">取消关注新浪微博</a></li>
+									<li><a href="">投诉</a></li>
+								</ul>
+							</div>
+						</div>
+						文章部分
+						<div class="article-context">
+
+							<div class="article-context-title">这是新浪微博</div>
+							<div class="article-context-img">
+								<img src=""> <img src=""> <img src=""> <img
+									src=""> <img src=""> <img src=""> <img
+									src=""> <img src=""> <img src="">
+
+							</div>
+						</div>
+						底部
+						<div class="article-footer">
+							<div>
+								<span class="iconfont">&#xe641;</span><span class="footer-font">收藏</span>
+							</div>
+
+							<div>
+								<span class="iconfont">&#xe628;</span><span class="footer-font">转发</span>
+							</div>
+
+							<div id="comment-icon">
+								<span class="iconfont">&#xe62f;</span><span class="footer-font">评论</span>
+							</div>
+							<div>
+								<span class="iconfont">&#xe639;</span><span class="footer-font">1</span>
+							</div>
+						</div> -->
+					<!-- 评论 -->
+					<!-- <div class="comment">
+							<div class="comment-first">
+								<div>
+									<img src="../resources/images/lunbotu1.png"
+										style="width: 32px; height: 32px; margin-top: 15px; margin-left: 18px;">
+								</div>
+								<div>
+									<input class="comment-input" type="text"
+										style="margin-top: 15px; height: 27px; width: 518px; margin-left: 10px;" />
+								</div>
+								<div>
+									<button type="button" disabled class="comment-button">评论</button>
+								</div>
+
+							</div>
+							<div class="comment-list">
+								<div>
+									<span id="according-hot">按热度</span>
+
+									<div class="comment-list-context">
+
+										一条评论
+										<div class="hot"
+											style="width: 600px; min-height: 60px; margin: 0 auto; margin-top: 10px; display: flex; position: relative;">
+											<img src="../resources/images/lunbotu3.png"
+												style="width: 32px; height: 32px; margin-left: 18px; margin-right: 10px;">
+											<div>
+												<div>
+													<a href=""
+														style="font-size: 13px; text-decoration: none; color: #FA7D3C; margin-left: 20px;">新浪微博</a>:
+												</div>
+												<div
+													style="position: absolute; left: 145px; top: 0px; height: 60px; width: 350px; word-wrap: break-word; overflow: hidden; font-size: 13px;">
+													我是新浪微博！</div>
+												<div style="color: #808080; font-size: 10px;">11月18日
+													12:21</div>
+											</div>
+											<div style="position: absolute; right: 30px; bottom: 10px;">
+												<a class="receive-button" href=""
+													style="text-decoration: none; color: #333; font-size: 11px;">回复</a>&nbsp;|
+												<span class="iconfont"
+													style="margin-left: 5px; color: #515152;">&#xe639;</span>&nbsp;<span
+													style="font-size: 13px;">26</span>
+											</div>
+
+										</div>
+										一条评论
+
+									</div>
+
+								</div>
+								回复		
+								<div class="receive-detail"
+									style="display: none; width: 100%; height: 120px; background-color: #f2f2f5;">
+									<div
+										style="width: 100%; height: 100px; margin: auto auto auto 90px; background-color: #fff;">
+										<input class="receive-input"
+											style="font-size: 13px; color: #808080; height: 25px; width: 90%; margin: 20px auto auto 25px;"
+											type="text" value="回复@新浪微博:" />
+										<button
+											style="margin-right: 22px; float: right; border: none; color: #fff; width: 70px; height: 28px; background-color: #ff8140; line-height: 28px; border-radius: 2px; margin-top: 10px;"
+											type="button">评论</button>
+									</div>
+								</div>
+								回复
+								评论下的评论
+								<div
+									style="width: 100%; min-height: 80px; background-color: #f2f2f5;">
+									<div
+										style="width: 97%; min-height: 80px; margin-left: 90px; background-color: #eaeaec; border-bottom: 1px solid #d9d9d9; padding-left: 15px;">
+										<a href="#"
+											style="font-size: 13px; color: #FA7D3C; text-decoration: none;">哔哩哔哩</a><span>:</span><br>
+										<span style="font-size: 12px; word-break: break-word;">欢迎来到哔哩哔哩！</span>
+										<div style="float: right; margin: 30px 10px auto auto;">
+											<span class="receive-detail-switch"
+												style="font-size: 12px; color: #515152; cursor: pointer;">回复</span>
+											<span style="font-size: 12px; color: #515152;">|</span> <span
+												class="iconfont"
+												style="margin-left: 5px; color: #515152; cursor: pointer;">&#xe639;</span>
+											<span style="font-size: 12px; cursor: pointer;">109</span>
+										</div>
+									</div>
+								</div>
+								回复		
+								<div class="receive-detail-last"
+									style="display: none; width: 100%; height: 120px; background-color: #f2f2f5;">
+									<div
+										style="width: 100%; height: 100px;; background-color: #fff; margin-left: 90px;">
+										<input class="receive-input"
+											style="font-size: 13px; color: #808080; height: 25px; width: 90%; margin: 20px auto auto 25px;"
+											type="text" value="回复@新浪微博:" />
+										<button
+											style="margin-right: 22px; float: right; border: none; color: #fff; width: 70px; height: 28px; background-color: #ff8140; line-height: 28px; border-radius: 2px; margin-top: 10px;"
+											type="button">评论</button>
+									</div>
+								</div>
+								回复
+							 评论下的评论
+							</div> -->
+					<!-- 评论 -->
+
+					<!-- </div> -->
+					<!-- 一条微博 -->
+
+				</div>
+				<!-- 所有微博 -->
+
+				<!-- 加载提示符 -->
+				<div class="ajaxtips"
+					style="display: none; margin-left: 260px; margin-bottom: 50px;">
+					Loding.....</div>
+				<!--加载完全部的提示符  -->
+				<!-- <div class="load-end" style="display:none;margin-left:260px;margin-bottom:50px;">
+					 已经到底了哦...</div> -->
+				<!-- 没微博了 -->
+				<div class="load-end"
+					style="width: 100%; height: 30px; background-color: #fff; line-height: 30px; margin-bottom: 20px; margin-top: 15px; text-align: center; font-size: 12px; color: #808080;">
+					已读完所有微博，点击 <a href="#" class="find-weibo"
+						style="text-decoration: none; color: #F7691D;">发现</a> 返回首页查看更多精彩微博
+				</div>
+				<!-- 没微博了 -->
+
+			</div>
+			<!-- 微博部分 -->
+
+			<!-- 关注部分 -->
+			<div class="follow-content" style="min-height:350px;">
+				<div
+					style="border-bottom: 1px solid #f2f2f5; box-sizing: border-box; width: 100%; height: 40px; background-color: #fff; line-height: 40px; font-weight: bold; color: #333; padding-left: 15px;">全部关注</div>
+				<!-- <div style="width: 100%;">
+					<input type="text" placeholder="输入昵称"
+						style="float: right; margin-right: 15px; margin-top: 10px;">
+					<a href=""
+						style="text-decoration: none; float: right; margin-right: -150px; margin-top: 10px;">
+						<span class="iconfont" style="color: #b5b8bd;">&#xe62d;</span>
+					</a>
+				</div> -->
+				<div class="all-follows" id="stars-list">
+
+					<!-- 一个关注 -->
+					<!-- <div class="all-follows-item">
+					<div style="width: 30%;height: 100%;border-right: 1px solid #d9d9d9;box-sizing: border-box;">
+						<a href="#"><img src="images/friendbgcsmall.jpg" style="width: 50px;height: 50px;
+						border-radius: 50%;margin: 25px auto 5px 8px;" ></a>
+					</div>
+					<div style="width: 60%;height: 100%;padding-left: 10px;">
+						<a href="#" class="all-follows-item-name">腾讯体育</a>
+						自行判断关注状态，互相关注则显示     ⇌互相关注  
+						<span style="font-size: 12px;color: #333;display: block;margin-top: 4px;">✔已关注</span>
+						<span style="color: #808080;font-size: 11px;display: block;
+						margin-top: 5px;overflow: hidden;width: 80%;text-overflow: ellipsis;white-space: nowrap;z-index: 999;">
+							他还没有填写个人简介</span>
+						<div style="border-radius: 4px;cursor: pointer;color: #333;background-color: #fff;height: 30px;border: 1px solid #ccc;
+						font-size: 12px;text-align: center;width: 70px;line-height: 30px;margin-left: 0;margin-top: 5px;">✘ 取消关注</div>
+					</div>
+					</div> -->
+					<!-- 一个关注 -->
+
+				</div>
+
+				<!-- 提示 -->
+				<div class="tips-stars"
+					style="display:none; width: 100%; height: 200px; background-color: #fff; padding-top: 40px;">
+					<div
+						style="margin: 0 auto; text-align: center; width: 50px; height: 50px; border-radius: 50%; background-color: #87bedc; position: relative;">
+						<span
+							style="line-height: 50px; color: #fff; font-size: 30px; font-weight: bolder;">i</span>
+						<span
+							style="display: block; color: #87bedc; position: absolute; top: 42px; left: 17px;">▼</span>
+					</div>
+					<div class="tips-stars-content" style="width: 100%; text-align: center; margin-top: 15px;">
+						你还没有关注的人，要加油哦！</div>
+				</div>
+				<!-- 提示 -->
+
+			</div>
+			<!-- 关注部分 -->
+			<!-- 粉丝部分 -->
+			<div class="fans-content"
+				style="margin-left: 20px; width: 600px; min-height: 350px; background-color: #fff; box-sizing: border-box; display: none;">
+				<div
+					style="height: 40px; width: 97%; border-bottom: 1px solid #f2f2f5; line-height: 40px; font-weight: bold; color: #333; padding-left: 15px;">
+					粉丝<span
+						style="font-weight: normal; font-size: 13px; margin-left: 5px;"
+						id="span-fansCount">0</span>
+				</div>
+				<!-- <div>
+					<input type="text" placeholder="输入该用户昵称"
+						style="float: right; margin-right: 15px; margin-top: 10px;" /> <a
+						href=""
+						style="text-decoration: none; float: right; margin-right: -150px; margin-top: 10px;">
+						<span class="iconfont" style="color: #b5b8bd;">&#xe62d;</span>
+					</a>
+				</div> -->
+
+				<!-- 所有粉丝 -->
+				<div id="fans-list"
+					style="width: 100%; margin-top: 30px; box-sizing: border-box; padding-bottom: 10px">
+
+					<!-- 一个粉丝 -->
+					<!-- <div style="display: flex;width: 100%;border-bottom: 2px solid #ccc;height: 105px;">
+							<div style="width: 12%;">
+								<a href="#"><img src="images/friendbgcsmall.jpg" style="width: 50px;height: 50px;
+						border-radius: 50%;margin-left: 10px;margin-top: 10px;" ></a>
+						</div>
+						
+							<div style="margin-top: 10px;">
+								<a class="fans-username" href="#">贪玩蓝月</a>
+								<span style="font-weight: bolder;color: #333;font-size: 15px;">♂</span>
+								<div class="all-fans-info" >
+									<div>关注<a href="#">798</a></div>
+									<div>粉丝<a href="#">478</a></div>
+									<div>微博<a href="#">123</a></div>
+								</div>
+								<div style="font-size: 12px;color: #808080;margin-top: 5px;">地址:<span style="color: #333;">广东&nbsp广州</span></div>
+								<div style="margin-top: 5px;font-size: 12px;color: #808080;width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">简介:<span style="color: #333;
+								">古天乐代言,携手张家辉，甄子丹</span></div>
+								</div>
+								<div style="flex: 1;">
+									<div class="all-fans-switch" style="cursor: pointer;margin-top: 10px;margin-right: 20px;float: right;width: 80px;height: 25px;
+									text-align: center;line-height: 25px;font-size: 13px;border-radius: 2px;color: #333;border: 1px solid #ccc;">
+										+关注</div>
+								</div>
+							
+							
+						</div> -->
+					<!-- 一个粉丝 -->
+
+				</div>
+				<!-- 所有粉丝 -->
+
+				<!-- 提示 -->
+				<div 
+				class="tips-fans"
+					style="display:none;width: 100%; height: 200px; background-color: #fff; padding-top: 40px;">
+
+					<div
+						style="margin: 0 auto; text-align: center; width: 50px; height: 50px; border-radius: 50%; background-color: #87bedc; position: relative;">
+						<span
+							style="line-height: 50px; color: #fff; font-size: 30px; font-weight: bolder;">i</span>
+						<span
+							style="display: block; color: #87bedc; position: absolute; top: 42px; left: 17px;">▼</span>
+					</div>
+					<div class="tips-fans-content" style="width: 100%; text-align: center; margin-top: 15px;">
+						还没有人关注到你呢，要加油哦！</div>
+
+				</div>
+				<!-- 提示 -->
+
+			</div>
+			<!-- 粉丝部分 -->
+		</div>
+		<!-- 内容部分 -->
+	</div>
+	</div>
+</body>
+                      <!-- 弹框 -->
+							<script>
+							  /* $(".alert-remove").click(function() {
+									$(".alert-delete").hide();
+								})
+								$(document).on("click",".delete-fans",function(e){
+									$(".alert-delete").show();
+								}); 
+								$(".delete-cancel").click(function() {
+									$(".alert-delete").hide();
+								}); */
+							</script>
+<script type="text/javascript">
+		$(document).ready(function(){
+			var userId = getQueryString('userId');
+			var toUserId = getQueryString('toUserId');
+			if($.trim(toUserId)==''||userId==toUserId){
+				//我的主页
+				$("#div-his-headImg").hide();
+			}else{
+				//ta人的主页
+				$(".introduce").show();
+				$("#div-my-headImg").hide();
+			}
+			//箭头部分
+			$("#arrow").click(function(event){
+				 event.stopPropagation();
+				$(".arrow-context").toggle();
+			});
+			$(window).click(function(){		
+				$(".arrow-context").hide();
+				});
+			// 搜索框
+			$("#search").focus(function(){
+				$("#search").css("background-color","#fff")
+			});
+			$("#search").blur(function(){
+				$("#search").css("background-color","#f2f2f5")
+			});
+			
+			// 评论部分
+							 $("#comment-icon").click(function(){
+								
+									 $(".comment").slideToggle();
+								
+								
+							 });
+							 // 评论的按钮										
+							$(".comment-input").bind("input propertychange",function(event){					
+							       var com=($(".comment-input").val().trim())
+								   if(com!=''){
+									   	$(".comment-button").removeAttr("disabled")
+										$(".comment-button").css("background-color","#FA7D3C")
+								   }
+							});
+							//评论列表
+							$("#according-hot").click(function(){
+								$(".comment-list-context").show();
+							});
+							
+							
+			// 评论部分	
+			//评论回复
+							$(".receive-input").focus(function(){
+								$(".receive-input").css("color","#333");
+							});
+							$(".receive-input").blur(function(){
+								$(".receive-input").css("color","#808080");
+							});
+							$(".receive-button").click(function(event){
+								event.preventDefault();
+								$(".receive-detail").toggle();
+							});
+							//评论下的评论
+							$(".receive-detail-switch").click(function(){
+								$(".receive-detail-last").toggle();
+							});
+			
+		});
+		
+	</script>
+<script type="text/javascript" src="../resources/js/common/common.js"></script>
+<script type="text/javascript" src="../resources/js/common/weibocommon.js"></script>
+<script type="text/javascript" src="../resources/js/frontend/homepageoperation.js"></script>
+<script type="text/javascript" src="../resources/js/common/commentandreply.js"></script>
+<!-- 搜索提示 -->
+<script
+	src="../resources/js/common/hot-search/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript"
+	src="../resources/js/frontend/homepage.js"></script>
+</html>

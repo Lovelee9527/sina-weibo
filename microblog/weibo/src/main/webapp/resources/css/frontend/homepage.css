@@ -1,0 +1,654 @@
+body {
+	margin: 0;
+	padding: 0;
+	/* background: url(./resources/images/friendBgc.jpg); */
+}
+
+/* 瀵艰埅鏍� */
+.nav {
+	width: 100%;
+	height: 47px;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	border-top: 2px solid #FA7D3C;
+	z-index: 999;
+	display: flex;
+	/* position: relative; */
+}
+
+.nav-img {
+	margin-top: 10px;
+	margin-left: 150px;
+}
+
+.search {
+	height: 45px;
+}
+
+.search input {
+	margin-top: 8px;
+	margin-left: 30px;
+	width: 465px;
+	height: 27px;
+	background-color: #f2f2f5;
+	border: 1px solid #cccccc;
+	padding-left: 10px;
+}
+
+.search-icon a {
+	text-decoration: none;
+}
+
+.search-icon span:hover {
+	color: #FA7D3C;
+}
+
+.search-icon .iconfont {
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 47px;
+	color: #696e78;
+	margin-left: -30px;
+}
+
+/* .list {
+	display: flex;
+	margin-left: 90px;
+} */
+
+/* .list div {
+	margin-left: 23px;
+}
+
+#list-special {
+	color: #FA7D3C;
+}
+
+.list div a {
+	line-height: 47px;
+	text-decoration: none;
+	color: #696e78;
+}
+
+.list div a:hover {
+	color: #FA7D3C;
+}
+
+.list span {
+	margin-right: 5px;
+	font-size: 21px;
+	font-weight: bold;
+}
+
+.set {
+	height: 30px;
+	flex: 1;
+	margin: auto auto auto 20px;
+	background-color: red;
+	display: flex;
+	border-left: 1px solid #ccc;
+	position: relative;
+}
+
+.set div {
+	width: 30px;
+	text-align: center;
+	height: 25px;
+	margin-left: 15px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.set div:last-child {
+	background-color: #FA7D3C;
+	color: #fff;
+}
+
+#set-special {
+	color: #fff;
+}
+
+.set div:hover {
+	color: #FA7D3C;
+}
+
+.set div span {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: -10px;
+}
+
+淇″皝鍐呭
+.letter-context {
+	position: absolute;
+	display: none;
+	top: 46px;
+	right: 185px;
+	box-shadow: 1px 1px 4px 1px #ccc;
+	z-index: 9999;
+	background-color: #fff;
+}
+
+.letter-context ul {
+	margin-right: 8px;
+}
+
+.letter-context ul li {
+	list-style: none;
+	font-size: 12px;
+	line-height: 25px;
+	margin-left: -30px;
+}
+
+.letter-context ul li:hover {
+	background-color: #f2f2f5;
+}
+
+.letter-context ul div li a {
+	text-decoration: none;
+	text-align: center;
+	color: #333;
+}
+
+.letter-context ul div li a:hover {
+	color: #FA7D3C;
+}
+
+.letter-context ul div {
+	margin-bottom: 5px;
+}
+
+#letter-line {
+	height: 1px;
+	width: 100px;
+	margin-left: -35px;
+	background-color: #f2f2f5;
+}
+
+.letter-context ul div li span {
+	float: right;
+	color: #333;
+}
+
+.letter-context div:last-child {
+	margin-left: 0px;
+	text-align: center;
+}
+
+璁剧疆鍐呭
+.set-context {
+	position: absolute;
+	display: none;
+	top: 46px;
+	right: 130px;
+	box-shadow: 1px 1px 4px 1px #ccc;
+	z-index: 9999;
+	background-color: #fff;
+}
+
+.set-context ul {
+	margin-right: 8px;
+}
+
+.set-context ul li {
+	list-style: none;
+	font-size: 12px;
+	line-height: 25px;
+	margin-left: -30px;
+}
+
+.set-context ul li:hover {
+	background-color: #f2f2f5;
+}
+
+.set-context ul div li a {
+	text-decoration: none;
+	text-align: center;
+	color: #333;
+}
+
+.set-context ul div li a:hover {
+	color: #FA7D3C;
+}
+
+.set-context ul div {
+	margin-bottom: 5px;
+} */
+
+#letter-line {
+	height: 1px;
+	width: 100px;
+	margin-left: -35px;
+	background-color: #f2f2f5;
+}
+
+.set-context div:last-child {
+	margin-left: 0px;
+	text-align: center;
+}
+
+.content-middle {
+	position: relative;
+	width: 900px;
+	min-height: 800px;
+	margin: 85px auto 0px auto;
+}
+
+.follow-fans-article {
+	padding-top: 10px;
+	width: 100%;
+	height: 50px;
+	background-color: #fff;
+	display: flex;
+}
+
+.follow-fans-article div {
+	cursor: pointer;
+}
+
+.follow-fans-article div a {
+	text-decoration: none;
+	color: #333;
+	font-size: 18px;
+}
+
+.follow-fans-article div a:hover {
+	color: #32a2d5;
+}
+
+.follow-fans-article div {
+	text-align: center;
+	width: 33.3%;
+	height: 80%;
+	border-right: 1px solid #d9d9d9;
+}
+
+.follow-fans-article div:last-child {
+	border-right: none;
+}
+
+/* 涓汉淇℃伅 */
+.introduce {
+	width: 100%;
+	height: 200px;
+	background-color: #fff;
+	margin-top: 15px;
+	padding: 20px 15px;
+	box-sizing: border-box;
+}
+
+.introduce div {
+	height: 30px;
+	width: 100%;
+	border-bottom: 1px solid #d9d9d9;
+	font-size: 13px;
+	color: #676c76;
+	line-height: 30px;
+}
+
+.introduce div span {
+	color: #333;
+}
+
+/* 寰崥閮ㄥ垎 */
+.publish-title {
+	width: 100%;
+	height: 40px;
+	background-color: #f2f2f5;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+.publish-title div {
+	display: inline-block;
+	width: 80px;
+	border-right: 1px solid #ccc;
+	height: 99%;
+	background-color: #fff;
+	border-bottom: 2px solid #f7691d;
+}
+
+.publish-title span {
+	cursor: pointer;
+	color: #333;
+	font-weight: bold;
+	line-height: 40px;
+	margin-left: 25px;
+	text-align: center;
+}
+
+.publish-title span:hover {
+	color: #32a2d5;
+}
+
+.publish-title input {
+	float: right;
+	margin: 10px;
+	height: 20px;
+	margin-top: 5px;
+}
+
+/* 涓�鏉″井鍗氱殑鍐呭 */
+.article {
+	width: 595px;
+	min-height: 160px;
+	background-color: #fff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* 寰崥澶撮儴 */
+.article-header {
+	display: flex;
+	position: relative;
+}
+
+/* 澶村儚 */
+.article-header div img {
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	margin: 15px auto auto 15px;
+}
+
+.article-info {
+	height: 55px;
+	margin: 20px auto auto 10px;
+}
+
+/* 鍚嶅瓧 */
+.article-user a {
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+.article-user a:hover {
+	color: #FA7D3C;
+}
+
+/* 鏃堕棿 */
+.article-time {
+	margin-top: 5px;
+}
+
+.article-time a {
+	font-size: 12px;
+	text-decoration: none;
+	color: #a18080;
+}
+
+.article-time a:hover {
+	color: #FA7D3C;
+}
+
+/* 绠ご */
+.arrow {
+	height: 55px;
+	line-height: 55px;
+	margin-right: 15px;
+}
+
+.arrow span:hover {
+	color: #FA7D3C;
+	cursor: pointer;
+}
+
+.arrow-context {
+	position: absolute;
+	display: none;
+	right: 24px;
+	top: 32px;
+	box-shadow: 1px 1px 4px 1px #ccc;
+	z-index: 999;
+	background-color: #fff;
+}
+
+.arrow-context ul {
+	margin-right: 8px;
+}
+
+.arrow-context ul li {
+	list-style: none;
+	font-size: 12px;
+	line-height: 25px;
+	margin-left: -30px;
+}
+
+.arrow-context ul li:hover {
+	background-color: #f2f2f5;
+}
+
+.arrow-context ul li a {
+	text-decoration: none;
+	text-align: center;
+	color: #333;
+}
+
+.arrow-context ul li a:hover {
+	color: #FA7D3C;
+}
+
+/* 寰崥姝ｆ枃 */
+.article-context-title {
+	max-width: 480px;
+	min-height: 30px;
+	word-wrap: break-word;
+	margin: 0 auto;
+	margin-left: 80px;
+}
+
+.article-context-img {
+	max-width: 400px;
+	margin-top: 10px;
+	margin-left: 80px;
+	flex-wrap: wrap;
+}
+
+.article-context-img img {
+	width: 120px;
+	height: auto;
+}
+
+/* 搴曢儴 */
+.article-footer {
+	width: 100%;
+	height: 40px;
+	border-top: 1px solid #f2f2f5;
+	margin-top: 5px;
+	box-sizing: border-box;
+	display: flex;
+}
+
+.article-footer div {
+	margin-top: 10px;
+	width: 25%;
+	height: 60%;
+	border-right: 1px solid #d9d9d9;
+	text-align: center;
+	color: #808080;
+	cursor: pointer;
+	/* background-color: #0077AA; */
+}
+
+.article-footer div:hover {
+	color: #FA7D3C;
+}
+
+.article-footer div:last-child {
+	border-right: none;
+}
+
+.footer-font {
+	font-size: 12px;
+	margin-left: 5px;
+}
+
+/* 璇勮 */
+.comment {
+	display: flex;
+	background-color: #f2f2f5;
+	/* min-height: 200px; */
+	width: 600px;
+	flex-wrap: wrap;
+	display: none;
+}
+
+.comment-first {
+	width: 100%;
+	display: none;
+	height: 100px;
+	border-top: 1px solid #f2f2f5;
+	display: flex;
+	position: relative;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.comment-first div button {
+	width: 70px;
+	position: absolute;
+	right: 20px;
+	top: 58px;
+	border: none;
+	height: 30px;
+	background-color: #ffc09f;
+	color: #fff;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.comment-list {
+	width: 480px;
+	min-height: 80px;
+	padding-bottom: 15px;
+	border-top: 1px solid #f2f2f5;
+	display: flex;
+	border-bottom: 1px sol #f2f2f5;
+	flex-wrap: wrap;
+}
+
+.comment-list div:first-child {
+	font-size: 12px;
+	width: 100%;
+}
+
+.comment-list div:first-child span:hover {
+	color: #FA7D3C;
+}
+
+.comment-list div:first-child span {
+	margin-left: 10px;
+	/*margin-right: 10px; */
+	cursor: pointer;
+}
+
+.comment-list div:first-child span:last-child {
+	margin-left: 0;
+}
+
+/* 缂栬緫涓汉璧勬枡 */
+.edit-info {
+	text-align: center;
+	padding-top: 5px;
+}
+
+.edit-info a {
+	text-decoration: none;
+	color: #333;
+	font-size: 13px;
+}
+
+.edit-info a:hover {
+	color: #F7691D;
+}
+/* 关注部分 */
+.follow-content {
+	margin-left: 20px;
+	width: 600px;
+	min-height: 50px;
+	background-color: #fff;
+	display: none;
+}
+
+.all-follows {
+	width: 100%;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+	margin-top: 40px;
+	padding: 2px 5px 15px 5px;
+	display: flex;
+}
+
+.all-follows-item {
+	width: 49.55%;
+	height: 135px;
+	background-color: #f2f2f5;
+	border-radius: 3px;
+	margin-top: 5px;
+	display: flex;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.all-follows div:nth-child(2n) {
+	margin-left: 5px;
+}
+
+.all-follows-item-name {
+	text-decoration: none;
+	display: block;
+	color: #333;
+	font-weight: bold;
+	font-size: 15px;
+	margin-top: 10px;
+}
+
+.all-follows-item-name:hover {
+	color: #F7691D;
+}
+/* 粉丝部分 */
+.fans-username {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.fans-username:hover {
+	color: #F7691D;
+}
+
+.all-fans-info {
+	display: flex;
+	margin-left: -10px;
+	margin-top: 5px;
+}
+
+.all-fans-info div {
+	font-size: 13px;
+	color: #333;
+	border-right: 1px solid #ccc;
+	width: 70px;
+	text-align: center;
+	margin-right: 5px;
+	height: 15px;
+}
+
+.all-fans-info div:last-child {
+	border-right: none;
+}
+
+.all-fans-info div a {
+	color: #F7691D;
+	font-size: 11px;
+	text-decoration: none;
+	margin-left: 5px;
+}
+.fans-item{
+	border-bottom: 2px dashed #ccc;
+}
+#fans-list div:last-child{
+	border-bottom:none;
+}

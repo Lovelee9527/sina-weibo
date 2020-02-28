@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.gdcp.weibo.dao.WeiboImgDao">
+     <resultMap type="com.gdcp.weibo.entity.WeiboImg" id="weiboImgMap">
+		<id column="weibo_img_id" property="weiboImgId" />
+		<result property="imgAddr" column="img_addr" />
+		<result property="priority" column="priority" />
+		<result property="weiboId" column="weibo_id" />
+     </resultMap>
+     
+     <select id="queryByWeiboId" resultMap="weiboImgMap">
+        SELECT *
+        FROM tb_weibo_img
+        WHERE
+        weibo_id = #{weiboId}
+        ORDER BY
+        PRIORITY DESC
+     </select>
+     
+     <select id="queryCountByWeiboId" resultType="int">
+        SELECT count(1)
+        FROM tb_weibo_img
+        WHERE
+        weibo_id = #{weiboId}
+     </select>
+     
+     <delete id="deleteImgByWeiboId">
+        DELETE
+        FROM tb_weibo_img
+        WHERE
+        weibo_id = #{weiboId}
+     </delete>
+     
+     <insert id="batchInsertWeiboImg" useGeneratedKeys="true" 
+     parameterType="java.util.List">
+        INSERT INTO
+        tb_weibo_img(img_addr,priority,weibo_id)
+        VALUES
+        <foreach collection="list" item="weiboImg"
+        index="index" separator=",">
+            (
+               #{weiboImg.imgAddr},
+               #{weiboImg.priority},
+               #{weiboImg.weiboId}
+            )
+        </foreach>
+     </insert>
+ 
+ </mapper>

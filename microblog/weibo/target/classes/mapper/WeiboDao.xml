@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gdcp.weibo.dao.WeiboDao">
+	<resultMap type="com.gdcp.weibo.entity.Weibo" id="weiboMap">
+		<id column="weibo_id" javaType="Long" property="weiboId" />
+		<result property="content" column="content" />
+		<result property="publishTime" column="publish_time" />
+		<!-- <result property="weiboId" column="weibo_id" /> -->
+		<result property="commentCount" column="comment_count" />
+		<result property="praiseCount" column="praise_count" />
+		<result property="fowardCount" column="foward_count" />
+		<association property="author" column="user_id"
+			javaType="com.gdcp.weibo.entity.User">
+			<id column="user_id" property="userId" />
+			<result column="head_img" property="headImg" />
+			<result column="nick_name" property="nickName" />
+		</association>
+	</resultMap>
+
+    <update id="updateWeibo" parameterType="com.gdcp.weibo.entity.Weibo">
+		UPDATE tb_weibo
+		<set>
+			<if test="weibo !=null and weibo.praiseCount!=null">praise_count=#{weibo.praiseCount}</if>
+		</set>
+		WHERE
+		weibo_id=#{weibo.weiboId}
+    </update>
+    
+    <select id="queryHotWeiboList" resultMap="weiboMap">
+		SELECT
+		weibo_id,
+		w.user_id,
+		content,
+		publish_time,
+		comment_count,
+		praise_count,
+		foward_count,
+		head_img,
+		nick_name
+		FROM
+		tb_weibo w,
+		tb_user u
+		<where>
+		     <if
+				test="weiboCondition!=null and weiboCondition.content != null">
+				 AND content like 
+				 '%${weiboCondition.content}%'
+			</if>
+			<if
+				test="weiboCondition!=null and weiboCondition.author != null and weiboCondition.author.nickName != null">
+				 AND u.nick_name like 
+				 '%${weiboCondition.author.nickName}%'
+			</if>
+			<if
+				test="weiboCondition!=null and weiboCondition.author!=null and weiboCondition.author.userId!=null">
+				AND w.user_id= #{weiboCondition.author.userId}
+			</if>
+			AND w.user_id=u.user_id
+		</where>
+		ORDER BY
+		w.praise_count DESC
+		LIMIT #{rowIndex},#{pageSize};
+	</select>
+
+	<select id="queryWeiboList" resultMap="weiboMap">
+		SELECT
+		weibo_id,
+		w.user_id,
+		content,
+		publish_time,
+		comment_count,
+		praise_count,
+		foward_count,
+		head_img,
+		nick_name
+		FROM
+		tb_weibo w,
+		tb_user u
+		<where>
+		     <if
+				test="weiboCondition!=null and weiboCondition.content != null">
+				 AND content like 
+				 '%${weiboCondition.content}%'
+			</if>
+			 
+			<if
+				test="weiboCondition!=null and weiboCondition.author != null and weiboCondition.author.nickName != null">
+				 AND u.nick_name like 
+				 '%${weiboCondition.author.nickName}%'
+			</if>
+			<if
+				test="weiboCondition!=null and weiboCondition.author!=null and weiboCondition.author.userId!=null">
+				AND w.user_id= #{weiboCondition.author.userId}
+			</if>
+			AND w.user_id=u.user_id
+		</where>
+		ORDER BY
+		w.publish_time DESC
+		LIMIT #{rowIndex},#{pageSize};
+	</select>
+
+	<select id="queryWeiboCount" resultType="int">
+		SELECT
+		count(1)
+		FROM
+		tb_weibo w,
+		tb_user u
+		<where>
+			<if
+				test="weiboCondition!=null and weiboCondition.content != null">
+				 AND content like 
+				 '%${weiboCondition.content}%'
+			</if>
+			<if
+				test="weiboCondition!=null and weiboCondition.author != null and weiboCondition.author.nickName != null">
+				 AND u.nick_name like 
+				 '%${weiboCondition.author.nickName}%'
+			</if>
+			<if
+				test="weiboCondition!=null and weiboCondition.author!=null and weiboCondition.author.userId!=null">
+				AND w.user_id= #{weiboCondition.author.userId}
+			</if>
+			AND w.user_id=u.user_id
+		</where>
+	</select>
+	
+	<select id="queryWeiboById" resultMap="weiboMap">
+	    SELECT
+	    *
+	   FROM
+		tb_weibo w,
+		tb_user u
+	    WHERE
+	    w.weibo_id= #{weiboId}
+	    AND 
+	    w.user_id = u.user_id
+	</select>
+	
+	<delete id="deleteWeiboById">
+	    DELETE
+	    FROM tb_weibo
+	    WHERE
+	    user_id = #{authorId}
+	    AND
+	    weibo_id = #{weiboId}
+	</delete>
+	
+	<insert id="insertWeibo" useGeneratedKeys="true" keyProperty="weiboId"
+		keyColumn="weibo_id">
+		INSERT INTO
+		tb_weibo(user_id,content,
+		publish_time,comment_count,
+		praise_count,foward_count)
+		VALUES(#{author.userId},#{content},
+		#{publishTime},#{commentCount},
+		#{praiseCount},#{fowardCount})
+	</insert>
+
+	<!-- 微博和微博图是一对多的关系，返回List形式，属性要用collection -->
+	<!--1 <collection property="weiboImgList" column="weibo_id" javaType="java.util.ArrayList" 
+		ofType="com.gdcp.weibo.entity.WeiboImg" select="getWeiboImgByWeiboId"> </collection> -->
+
+	<!--2 <collection property="weiboImgList" column="weibo_id" ofType="com.gdcp.weibo.entity.WeiboImg"> 
+		<id property="weiboImgId" column="weibo_img_id"></id> <result property="imgAddr" 
+		column="img_addr" /> <result property="priority" column="priority" /> <result 
+		property="weiboId" column="weibo_id" /> </collection> -->
+
+	<!-- <resultMap id="weiboImgMap" type="com.gdcp.weibo.entity.WeiboImg"> 
+		<id property="weiboImgId" column="weibo_img_id"/> <result property="imgAddr" 
+		column="img_addr" /> <result property="priority" column="priority" /> </resultMap> 
+		<select id="getWeiboImgByWeiboId" resultMap="weiboImgMap"> SELECT * FROM 
+		tb_weibo_img WHERE weibo_id = #{weiboId} </select> -->
+</mapper>

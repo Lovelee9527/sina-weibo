@@ -1,0 +1,139 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: url(../images/changePass.png);
+}
+
+/* 鍐呭閮ㄥ垎 */
+.content {
+	width: 650px;
+	height: 500px;
+	background-color: #fff;
+	margin: 60px auto auto auto;
+	box-shadow: 2px -1px 10px #808080;
+	border-top: 2px solid #fa7d3c;
+}
+
+/* 澶ф爣棰橀儴鍒� */
+.title {
+	color: #FA7D3C;
+	border-bottom: 1px solid #ccc;
+}
+
+.title p {
+	margin-left: 20px;
+}
+
+/* 鍐呭涓棿閮ㄥ垎 */
+.content-middle {
+	display: flex;
+}
+
+/* 鍐呭涓棿宸﹁竟 */
+.content-left {
+	width: 150px;
+	height: 446px;
+	background-color: #f2f2f5;
+	border-right: 1px solid #ccc;
+
+}
+
+.content-left div {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 12px;
+}
+
+
+/* 鍐呭涓棿鍙宠竟 */
+.content-right {
+	flex: 1;
+	position: relative;
+
+}
+
+/* 鍐呭涓棿鍙宠竟鏍囬 */
+.content-right-username {
+	border-bottom: 1px solid #ccc;
+	padding-left: 40px;
+	font-size: 13px;
+	color: #333;
+	font-weight: bold;
+	display: flex;
+
+}
+
+.username {
+	margin-top: 11px;
+}
+
+.username a {
+	text-decoration: none;
+	color: #0077AA;
+	font-size: 15px;
+
+}
+
+.username a:hover {
+	color: #FA7D3C;
+}
+
+#changeinfo,
+#changepassword {
+	cursor: pointer;
+
+}
+
+#changeinfo {
+	color: #FA7D3C;
+}
+
+.change-allinfo {
+	margin: 0px auto auto 40px;
+	font-size: 12px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.change-allinfo div {
+	margin-top: 20px;
+	width: 100%;
+}
+
+.change-allinfo div button {
+	border: none;
+	background-color: #FA7D3C;
+	color: #fff;
+	border-radius: 2px;
+	font-size: 12px;
+	height: 25px;
+	width: 65px;
+	cursor: pointer;
+	margin: 82px auto auto 175px;
+}
+
+.changepass {
+	display: none;
+	position: absolute;
+	top: 65px;
+	left: 42px;
+	font-size: 12px;
+
+
+}
+
+.changepass div {
+	margin-bottom: 20px;
+}
+
+.changepass div button {
+	border: none;
+	background-color: #FA7D3C;
+	color: #fff;
+	border-radius: 2px;
+	font-size: 12px;
+	height: 26px;
+	width: 65px;
+	cursor: pointer;
+	margin: 158px auto auto 173px;
+}

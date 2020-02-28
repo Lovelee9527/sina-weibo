@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>微博注册</title>
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/frontend/register.css">
+<link rel="stylesheet" type="text/css"
+	href="../resources/icon/iconfont.css">
+<link rel="shortcut icon" href="../resources/images/weibo.ico">
+
+<!--自定义-->
+<!-- toast必需链接 -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/jquery.toast.min.css">
+
+</head>
+<body>
+
+<!-- 弹框 -->
+						<div class="alert-delete"
+								style=" display: none;z-index:5 ;width: 220px; height: 210px; background-color: #fff; border-top: 2px solid #FA7D3C; position: absolute; right: 650px; top: 300px;">
+								<div
+									style="position: relative; width: 50px; height: 50px; background-color: #0099FF; border-radius: 50%; margin: 50px auto;">
+									<h1
+										style="color: #fff; font-size: 30px; text-align: center; line-height: 50px;">?</h1>
+								</div>
+								<div style="text-align: center; margin-top: -30px; height: 40px;" class="tips-text">确定要删除该码？</div>
+								<div
+									style="width: 220px; height: 50px; background-color: #f2f2f5; padding-top: 10px;">
+									<button type="button" class="delete-yes"
+										style="cursor: pointer;border: none; color: #fff; background-color: #FA7D3C; font-size: 16px; width: 75px; height: 40px; border-radius: 2px; margin-left: 25px;">确定</button>
+									<button class="delete-cancel" type="button"
+										style="cursor: pointer;border: 1px solid #ccc; color: #333; background-color: #fff; font-size: 16px; width: 75px; height: 40px; border-radius: 2px; margin-left: 15px;">取消</button>
+									<span class="alert-remove" style="cursor: pointer;">X</span>
+								</div>
+							</div>
+      <!-- 弹框 end-->
+
+	<div class="line"></div>
+	<div class="">
+		<div class="logo-container">
+			<img src="../resources/images/bg.png" alt="" class="img1"> <img
+				src="../resources/images/logo2.png" alt="" class="img2">
+		</div>
+		<div class="register-container">
+			<div class="registerTitle">欢迎注册！</div>
+			<div class="registerForm">
+				<form id="form" style="position: relative;">
+					<!-- <form id="form" action="/frontend/registeruser" method="post"> -->
+					<div class="phone">
+						登录名字：<input type="text" id="userName" name="userName"
+							placeholder="输入您的登录名,不可修改">
+					</div>
+					<div class="password">
+						用户密码：<input type="password" id="password" placeholder="请输入您的用户密码">
+					</div>
+					<!-- <div class="headImg">
+						用户头像：<input type="file" id="headImg">
+					</div> -->
+				    <div class="birthday">
+						出生年月：<input type="date" id="birthday">
+					</div>
+					<div class="checkcode" style="margin-left: 16px;">
+						验证码：<input type="text" placeholder="请输入您的验证码"  id="j_captcha"
+							style="width: 159px;">
+					</div>
+					<div class="checkimg"
+						style="position: absolute; top: 150px; right: -25px;">
+						<img id="captcha-img" alt="点击更换" title="点击更换"
+							onclick="changeVerifyCode(this)" src="../Kaptcha"
+							style="width: 90px; height: 40px;" />
+					</div>
+
+					<div class="button">
+						<!-- <button type="submit" id="submit">立即注册</button> -->
+						<button id="submit" OnClick="return false">立即注册</button>
+					</div>
+					<div class="form-link">
+						<a href="#">微博服务使用协议</a><br> <a href="#">微博个人资讯保护协议</a><br>
+						<a href="#">全国人大常委会关于加强网络资讯保护的决定</a>
+					</div>
+				</form>
+				<div class="container-right">
+					<div class="login">
+						已有账号,<a href="index">直接登录>></a>
+					</div>
+					<div class="help">微博注册帮助</div>
+					<div class="help-link">
+						<a href="#">微博注册操作指南</a><br> <a href="#">手机注册时提示手机号码已被绑定怎么办？</a><br>
+						<a href="#">注册微博时昵称提示"已经被注册"如何处理？</a><br> <a href="#">注册时提示"你所使用的ip地址异常"，该怎么办？</a><br>
+						<a href="#">更多帮助>></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-link">
+				<span class="iconfont">&#xe666; </span><a href="#">北京微梦创科网络技术有限公司</a>
+			</div>
+			<div class="footer-link">
+				<a href="#">京网文[2017]10291-1172号</a>
+			</div>
+			<div class="footer-link">
+				<a href="#">京ICP备12002058号</a>
+			</div>
+			<div class="footer-last">Copynight&copy;2009-2019 WEIBO</div>
+		</div>
+
+<!-- JQuery必需  -->
+<script src="../resources/js/common/jquery/jquery.min.2.2.4.js"></script>
+		<script type="text/javascript"
+			src="../resources/js/common/jquery.toast.min.js"></script>
+
+		<script type='text/javascript'
+			src='../resources/js/frontend/register.js' charset='utf-8'></script>
+		<script type='text/javascript' src='../resources/js/common/common.js'
+			charset='utf-8'></script>
+</body>
+</html>

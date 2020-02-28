@@ -1,0 +1,200 @@
+body {
+	background-color: #bce0f4;
+	margin: 0;
+	padding: 0;
+}
+
+.line {
+	width: 10000px;
+	height: 3px;
+	background-color: #fb303d;
+	padding-top: 0;
+}
+
+.container {
+	width: 1126px;
+	margin: 0 auto;
+}
+
+.container img {
+
+	display: block;
+}
+
+.img2 {
+	position: absolute;
+	top: 30px;
+	left: 350px;
+}
+
+.logo-container {
+	margin: 0 auto;
+	position: relative;
+	width: 896px;
+	height: 186px;
+}
+
+/*内容*/
+.register-container {
+	width: 880px;
+	height: 500px;
+	background-color: #fff;
+	border-radius: 7px;
+	margin: 0 auto;
+	padding-top: 20px;
+	text-align: center;
+
+}
+
+.registerTitle {
+	width: 125px;
+	font-size: 25px;
+	margin-left: 50px;
+
+
+}
+
+.registerForm {
+	display: flex;
+}
+
+form {
+	width: 400px;
+	margin: 70px 0 0 140px;
+}
+
+form div {
+	margin-bottom: 30px;
+}
+
+.button button {
+	background-color: #ffa00a;
+	border: none;
+	color: #fff;
+	font-size: 17px;
+	font-weight: bold;
+	width: 200px;
+	height: 40px;
+	cursor: pointer;
+	margin-left: 15px;
+	margin-top: 30px;
+	border-radius: 4px;
+}
+
+.birthday input {
+	width: 157px;
+}
+
+.form-link {
+	margin-left: 14px;
+	margin-top: -20px;
+}
+
+.form-link a {
+	font-size: 12px;
+	text-decoration: none;
+	color: #0a8cd2;
+}
+
+.form-link a:hover {
+	text-decoration: underline;
+}
+
+.container-right {
+	width: 200px;
+	height: 320px;
+	border-left: 1px solid #a9a9a9;
+	margin-top: 40px;
+	margin-left: 90px;
+}
+
+.container-right div {
+	margin-left: 25px;
+}
+
+.login {
+	border-bottom: 1px solid #ccc;
+	height: 30px;
+	margin-top: 30px;
+}
+
+.login a {
+	text-decoration: none;
+	color: #0a8cd2;
+}
+
+.help {
+	margin-top: 10px;
+}
+
+.help-link {
+	margin-top: 20px;
+}
+
+.help-link a {
+	text-decoration: none;
+	color: #0a8cd2;
+	font-size: 13px;
+}
+
+.help-link a:hover {
+	text-decoration: underline;
+
+}
+
+/*底部*/
+.footer {
+	width: 880px;
+	margin: 15px auto 0 auto;
+
+	height: 30px;
+	display: flex;
+}
+
+.footer div {
+	margin-left: 37px;
+	height: 20px;
+	line-height: 20px;
+}
+
+.footer div a {
+	text-decoration: none;
+	color: #6e9ab8;
+	font-size: 13px;
+}
+
+.footer div a:hover {
+	text-decoration: underline;
+}
+
+.footer-last {
+
+	color: #6e9ab8;
+	font-size: 13px;
+
+}
+
+.footer-link span {
+	color: #6e9ab8;
+	font-size: 20px;
+}
+/* #form{
+	position: relative;
+}
+.checkimg{
+	position: absolute;
+	top: 150px;
+	right: -25px;
+	
+}
+.checkimg img{
+	width: 90px;
+	height: 40px;
+}
+.checkcode{
+	margin-left: 40px;
+}
+.checkcode input{
+	width: 159px;
+}
+ */

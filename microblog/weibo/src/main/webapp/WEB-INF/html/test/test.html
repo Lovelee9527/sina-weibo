@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+
+<!-- test -->
+ <link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+<script type='text/javascript'
+	src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript'
+	src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+
+<!-- <link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css"> -->
+<!-- <script type='text/javascript'
+	src='//g.alicdn.com/msui/sm/0.6.2/js/??sm.min.js,sm-extend.min.js'
+	charset='utf-8'></script> -->
+	<!-- mine -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/frontend/mine.css">
+<!-- test -->
+
+<!-- toast必需链接 -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/jquery.toast.min.css">
+<!-- <link
+	href="https://cdn.bootcss.com/jquery-toast-plugin/1.3.2/jquery.toast.css"
+	rel="stylesheet"> -->
+	<link href="../resources/js/common/hot-search/css/base/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+
+</head>
+<body>
+	<form>
+		<!-- <input type="text" id="1" class="a">
+        <textarea rows="4" cols="40" id="2" class="b"></textarea>
+        <button id="3">1a 2b</button> -->
+		<div>账号登录</div>
+		<!-- test==start -->
+		<input id="autocomplete" title="type &quot;a&quot;" type="text" placeholder="大家正在搜:林更新">
+	</form>
+
+
+
+	<!-- 必需链接 -->
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="../resources/js/common/jquery.toast.min.js"></script>
+	<!-- <script
+		src="https://cdn.bootcss.com/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script> -->
+
+	<!-- 	<script type="text/javascript" src="../resources/js/frontend/register.js"></script> -->
+
+
+	<script type="text/javascript" src="../resources/js/common/common.js"></script>
+<script type="text/javascript"
+	src="../resources/js/common/jquery.screw.js"></script>
+<script src="../resources/js/common/hot-search/js/jquery-ui-1.9.2.custom.js"></script>
+<script>
+		$(function() {				
+			var availableTags = [
+				"古天乐",
+				"张家辉",
+				"小幸运",
+				"妮妮",
+				"李易峰",
+				"梁朝伟",
+				"复仇者联盟",
+				"古",
+				"ColdFusion",
+				"Erlang",
+				"Fortran",
+				"Groovy",
+				"Haskell",
+				"Java",
+				"JavaScript",
+				"Lisp",
+				"Perl",
+				"PHP",
+				"Python",
+				"Ruby",
+				"Scala",
+				"Scheme"
+			];
+			$( "#autocomplete" ).autocomplete({
+				source: availableTags
+			});										
+		});
+		</script>	
+
+
+</body>
+
+</html>

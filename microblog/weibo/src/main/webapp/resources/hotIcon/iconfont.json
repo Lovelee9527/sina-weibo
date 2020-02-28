@@ -1,0 +1,51 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "631375",
+      "name": "火",
+      "font_class": "huo",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "705651",
+      "name": "爱心",
+      "font_class": "aixin",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "705699",
+      "name": "指南针",
+      "font_class": "zhinanzhen",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "969378",
+      "name": "文章管理",
+      "font_class": "svgwrite",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "1221888",
+      "name": "时钟 实心",
+      "font_class": "solid-time",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "3845284",
+      "name": "电视-f",
+      "font_class": "dianshi-f",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    }
+  ]
+}

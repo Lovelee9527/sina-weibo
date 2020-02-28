@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gdcp.weibo.dao.NotifyDao">
+	<resultMap id="notifyMap" type="com.gdcp.weibo.entity.Notify">
+		<id column="notify_id" javaType="Long" property="notifyId" />
+		<result property="type" column="type" />
+		<result property="action" column="action" />
+		<result property="senderId" column="sender_id" />
+		<result property="senderType" column="sender_type" />
+		<result property="userId" column="user_id" />
+		<result property="isRead" column="is_read" />
+		<result property="createTime" column="create_time" />
+		<result property="nickName" column="nick_name" />
+		<result property="headImg" column="head_img" />
+		<result property="targetId" column="target_id" />
+		<result property="commentId" column="comment_id" />
+		<result property="commentReplyId" column="comment_reply_id" />
+		<result property="weiboId" column="weibo_id" />
+		<result property="state" column="state" />
+		<!-- <association property="targetId" column="target_id" javaType="com.gdcp.weibo.entity.User"> 
+			<id column="user_id" javaType="Long" property="userId" /> <result property="nickName" 
+			column="nick_name" /> <result property="headImg" column="head_img" /> </association> 
+			<association property="commentId" column="comment_id" javaType="com.gdcp.weibo.entity.Comment"> 
+			<id column="comment_id" javaType="Long" property="target_id" /> <result property="content" 
+			column="content" /> </association> <association property="commentReplyId" 
+			column="comment_reply_id" javaType="com.gdcp.weibo.entity.CommentReply"> 
+			<id column="comment_reply_id" javaType="Long" property="commentReplyId" /> 
+			<result property="content" column="content" /> </association> <association 
+			property="weiboId" column="weibo_id" javaType="com.gdcp.weibo.entity.Weibo"> 
+			<id column="weibo_id" javaType="Long" property="weiboId" /> <result property="content" 
+			column="content" /> </association> -->
+	</resultMap>
+
+	<select id="queryNotifyList" resultMap="notifyMap"
+		parameterType="com.gdcp.weibo.entity.Notify">
+		SELECT
+		*
+		FROM
+		tb_notify n,
+		tb_user u
+		<where>
+			<if test="notifyCondition!=null and notifyCondition.commentReplyId!=null">
+				AND n.comment_reply_id =
+				#{notifyCondition.commentReplyId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.state!=null">
+				AND n.state = #{notifyCondition.state}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.commentId!=null">
+				AND n.comment_id = #{notifyCondition.commentId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.weiboId!=null">
+				AND n.weibo_id = #{notifyCondition.weiboId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.senderId!=null">
+				AND n.sender_id = #{notifyCondition.senderId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.senderType!=null">
+				AND n.sender_type = #{notifyCondition.senderType}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.userId!=null">
+				AND n.user_id = #{notifyCondition.userId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.isRead!=null">
+				AND n.is_read = #{notifyCondition.isRead}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.type!=null">
+				AND n.type = #{notifyCondition.type}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.action!=null">
+				AND n.action = #{notifyCondition.action}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.targetId!=null">
+				AND n.target_id = #{notifyCondition.targetId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.content!=null">
+				AND n.content = #{notifyCondition.content}
+			</if>
+			AND
+			n.target_id = u.user_id
+		</where>
+		ORDER BY
+		n.create_time DESC
+	</select>
+
+	<select id="queryNotifyCount" resultType="int"
+		parameterType="com.gdcp.weibo.entity.Notify">
+		SELECT
+		count(1)
+		FROM
+		tb_notify n,
+		tb_user u
+		<where>
+			<if test="notifyCondition!=null and notifyCondition.commentReplyId!=null">
+				AND n.comment_reply_id =
+				#{notifyCondition.commentReplyId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.state!=null">
+				AND n.state = #{notifyCondition.state}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.commentId!=null">
+				AND n.comment_id = #{notifyCondition.commentId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.weiboId!=null">
+				AND n.weibo_id = #{notifyCondition.weiboId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.senderId!=null">
+				AND n.sender_id = #{notifyCondition.senderId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.senderType!=null">
+				AND n.sender_type = #{notifyCondition.senderType}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.userId!=null">
+				AND n.user_id = #{notifyCondition.userId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.isRead!=null">
+				AND n.is_read = #{notifyCondition.isRead}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.type!=null">
+				AND n.type = #{notifyCondition.type}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.action!=null">
+				AND n.action = #{notifyCondition.action}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.targetId!=null">
+				AND n.target_id = #{notifyCondition.targetId}
+			</if>
+			<if test="notifyCondition!=null and notifyCondition.content!=null">
+				AND n.content = #{notifyCondition.content}
+			</if>
+			AND
+			n.target_id = u.user_id
+		</where>
+		ORDER BY
+		n.create_time DESC
+	</select>
+
+	<select id="queryNotifysByTargetId" parameterType="long"
+		resultType="com.gdcp.weibo.entity.Notify">
+		SELECT
+		*
+		FROM tb_notify
+		WHERE
+		target_id = #{targetId}
+		ORDER BY
+		create_time DESC
+	</select>
+
+	<update id="updateNotify" parameterType="com.gdcp.weibo.entity.Notify">
+		UPDATE tb_notify
+		<set>
+			<if test="notify!=null and notify.isRead!=null">
+				is_read = #{notify.isRead},
+			</if>
+			<if test="notify!=null and notify.state!=null">
+				state = #{notify.state},
+			</if>
+			<if test="notify!=null and notify.createTime!=null">
+				create_time = #{notify.createTime}
+			</if>
+		</set>
+		<where>
+			<if test="notify!=null and notify.content!=null">
+				AND content = #{notify.content}
+			</if>
+			AND
+			action = #{notify.action}
+			AND
+			target_id = #{notify.targetId}
+		</where>
+
+	</update>
+
+	<delete id="deleteNotify" parameterType="com.gdcp.weibo.entity.Notify">
+		DELETE
+		FROM tb_notify
+		<where>
+			<if test="notify!=null and notify.state!=null">
+				AND state = #{notify.state}
+			</if>
+			<if test="notify!=null and notify.action!=null">
+				AND action = #{notify.action}
+			</if>
+			<if test="notify!=null and notify.targetId!=null">
+				AND target_id = #{notify.targetId}
+			</if>
+			<if test="notify!=null and notify.senderId!=null">
+				AND sender_id = #{notify.senderId}
+			</if>
+			<if test="notify!=null and notify.weiboId!=null">
+				AND weibo_id = #{notify.weiboId}
+			</if>
+			<if test="notify!=null and notify.commentId!=null">
+				AND comment_id = #{notify.commentId}
+			</if>
+			<if test="notify!=null and notify.commentReplyId!=null">
+				AND comment_reply_id = #{notify.commentReplyId}
+			</if>
+		</where>
+	</delete>
+
+	<insert id="insertNotify" useGeneratedKeys="true" keyProperty="notifyId"
+		keyColumn="notify_id">
+		INSERT INTO
+		tb_notify(notify_id,content,type,target_id,
+		action,sender_id,sender_type,user_id,
+		is_read,create_time,nick_name,head_img,
+		comment_id,comment_reply_id,weibo_id,state)
+		VALUES
+		(#{notifyId},#{content},#{type},#{targetId},
+		#{action},#{senderId},#{senderType},#{userId},
+		#{isRead},#{createTime},#{nickName},#{headImg},
+		#{commentId},#{commentReplyId},#{weiboId},#{state})
+	</insert>
+
+</mapper>

@@ -1,0 +1,150 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	width: 100%;
+	height: 45px;
+	background-color: #fff;
+
+}
+
+.hot-logo {
+	width: 100%;
+	position: fixed;
+	border-bottom: 1px solid #ccc;
+	border-top: 2px solid #fa7d3c;
+	height: 41px;
+}
+
+.hot-logo img {
+	width: 125px;
+	margin: 8px 30px;
+
+}
+
+ul {
+	margin-top: 45px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 240px;
+	background-color: #f7f7f7;
+	position: fixed;
+	height: 210px;
+	overflow: auto;
+	border-bottom: 1px solid #ccc;
+	z-index: 9999;
+}
+
+li a {
+	display: block;
+	color: #333333;
+	padding: 14px 26px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+li a.active {
+	color: #ff8200;
+
+}
+
+li a:hover:not(.active) {
+	background-color: #e5e7ee;
+
+}
+
+.container {
+	margin-left: 25%;
+	padding: 1px 16px;
+	height: 1px;
+}
+
+ul li a span {
+	color: #929292;
+}
+
+.left {
+	width: 240px;
+	height: 100%;
+	background-color: #f7f7f7;
+	position: fixed;
+
+	margin-top: 205px;
+}
+
+.login-register {
+
+	position: absolute;
+	color: #d9d9d9;
+	position: fixed;
+	top: 10px;
+	right: 30px;
+}
+
+.login-register a {
+	text-decoration: none;
+	color: #333;
+	margin: 10px;
+
+}
+
+.login-register a:hover {
+	color: #fe8200;
+}
+
+.sort {
+	font-weight: bold;
+	margin: 30px 0 0 30px;
+}
+
+.left-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: 80%;
+	margin-bottom: 30px;
+}
+
+.left-list a {
+	text-decoration: none;
+	color: #333;
+}
+
+.left-list a:hover {
+	background-color: #e5e7ee;
+}
+
+.left-list div {
+	font-size: 14px;
+	width: 62px;
+	margin-top: 19px;
+}
+
+.left-last {
+	width: 100% margin-top:60px;
+
+	border-top: 1px solid #ccc;
+	height: 200px;
+
+}
+
+.left-last div {
+	width: 100% height:90px;
+	margin-top: 30px;
+
+}
+
+.left-last div a {
+	margin-left: 25px;
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+
+}
+
+.left-last div:hover {
+	background-color: #e5e7ee;
+}

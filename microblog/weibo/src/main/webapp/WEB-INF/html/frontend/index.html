@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>微博-随时随地发现新鲜事</title>
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/frontend/index.css">
+<link rel="stylesheet" type="text/css"
+	href="../resources/icon/iconfont.css">
+<link rel="shortcut icon" href="../resources/images/weibo.ico">
+<link href="../resources/js/common/hot-search/css/base/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+<!-- JQuery必需 toast -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/jquery.toast.min.css">
+	
+<!-- JQuery必需  -->
+<script src="../resources/js/common/jquery/jquery.min.2.2.4.js"></script>
+</head>
+<body>
+
+<!-- 弹框 -->
+						<div class="alert-delete"
+								style="display: none;z-index:5 ;width: 220px; height: 210px; background-color: #fff; border-top: 2px solid #FA7D3C; position: absolute; right: 650px; top: 300px;">
+								<div
+									style="position: relative; width: 50px; height: 50px; background-color: #0099FF; border-radius: 50%; margin: 50px auto;">
+									<h1
+										style="color: #fff; font-size: 30px; text-align: center; line-height: 50px;">?</h1>
+								</div>
+								<div style="text-align: center; margin-top: -30px; height: 40px;" class="tips-text">确定要删除该码？</div>
+								<div
+									style="width: 220px; height: 50px; background-color: #f2f2f5; padding-top: 10px;">
+									<button type="button" class="delete-yes"
+										style="cursor: pointer;border: none; color: #fff; background-color: #FA7D3C; font-size: 16px; width: 75px; height: 40px; border-radius: 2px; margin-left: 25px;">确定</button>
+									<button class="delete-cancel" type="button"
+										style="cursor: pointer;border: 1px solid #ccc; color: #333; background-color: #fff; font-size: 16px; width: 75px; height: 40px; border-radius: 2px; margin-left: 15px;">取消</button>
+									<span class="alert-remove" style="cursor: pointer;">X</span>
+								</div>
+							</div>
+      <!-- 弹框 end-->
+      
+	<div class="header">
+		<div class="sina-logo">
+			<img src="../resources/images/logo.png" alt="logo" class="logo">
+		</div>
+		<div class="search-box">
+			<!-- <input type="text" class="search" /> -->
+			<input id="autocomplete" class="search" name="search" title="type &quot;a&quot;" type="text" placeholder="搜索微博、找人">
+			 <a href="#"><span
+				class="iconfont" id="iconfont-search">&#xe637;</span></a>
+		</div>
+		<div class="headerList">
+			<div>
+				<a href="index.html" onclick="Index()"><span class="iconfont">&#xe619;</span>首页</a>
+			</div>
+			<!-- <div>
+				<a href="hot.html"><span class="iconfont">&#xe8f4;</span>热门</a>
+			</div> -->
+			<div>
+				<a href="#"><span class="iconfont">&#xe637;</span>发现</a>
+			</div>
+			<div>
+				<a href="register"><span class="iconfont">&#xe683;</span>注册</a>
+			</div>
+			<div>
+				<a href="#" onclick="Login()"><span class="iconfont">&#xe604;</span>登录</a>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="container">
+		<div class="container-left">
+			<div>
+				<a href="#">精选</a>
+			</div>
+			<div>
+				<a href="#">NBA</a>
+			</div>
+			<div>
+				<a href="#">娱乐</a>
+			</div>
+			<div>
+				<a href="#">旅游</a>
+			</div>
+			<div>
+				<a href="#">时尚</a>
+			</div>
+			<div>
+				<a href="#">科技</a>
+			</div>
+			<div>
+				<a href="#">星座</a>
+			</div>
+			<div>
+				<a href="#">财经</a>
+			</div>
+			<div>
+				<a href="#">社会</a>
+			</div>
+			<div>
+				<a href="#">电影</a>
+			</div>
+		</div>
+		<!-- 轮播图 -->
+		<div class="container-middle">
+			<div id="lunbo">
+				<ul>
+					<li><img src="../resources/images/lunbotu1.png" alt="1"></li>
+					<li><img src="../resources/images/lunbotu2.png" alt="2"></li>
+					<li><img src="../resources/images/lunbotu3.png" alt="3"></li>
+					<li><img src="../resources/images/lunbotu4.png" alt="4"></li>
+				</ul>
+				<!-- 轮播图圆点 -->
+				<!--  <div id="buttons">
+             <span index="1" class="on"></span>
+             <span index="2"></span>
+	         <span index="3"></span>
+             <span index="4"></span>        
+   </div> -->
+			</div>
+			<!-- 微博找人 -->
+			<div class="searchPeople">
+				<div class="searchPeople-title">微博找人</div>
+				<div class="searchPeople-list">
+					<div>
+						<a href="#"><span class="iconfont">&#xe6f8;</span> 明星</a>
+					</div>
+					<div>
+						<a href="#"><span class="iconfont">&#xea85;</span> 商界</a>
+					</div>
+					<div>
+						<a href="#"><span class="iconfont">&#xe609;</span> 媒体精英</a>
+					</div>
+					<div>
+						<a href="#"><span class="iconfont">&#xe6af;</span> 作家</a>
+					</div>
+					<div>
+						<a href="#"><span class="iconfont">&#xe611;</span> 政府官员</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="container-right">
+
+			<form>
+				<div class="form-bgc">
+					<div class="container-right-title">账号登录</div>
+					<div>
+						<input type="text" placeholder="请输入账号" id="userName">
+					</div>
+					<div>
+						<input type="password" placeholder="请输入密码" id="password">
+					</div>
+					<!-- <div>
+						<input type="text" id="j_captcha" placeholder="请输入验证码"> <img
+							id="captcha-img" alt="点击更换" title="点击更换"
+							onclick="changeVerifyCode(this)" src="../Kaptcha" />
+					</div> -->
+					<div>
+						<!-- 在表单内用window.location.href需在添加按钮里加 OnClick="return false"-->
+						<button id="submit" OnClick="return false">登录</button>
+					</div>
+				</div>
+			</form>
+
+			<div class="hot-news">
+				<div class="hot-news-title">微博热门话题</div>
+				<div class="hot-news-list">
+					<ol>
+						<li><a href="">#曹骏蓝盈分手#</a></li>
+						<li><a href="">#小说里你最喜欢的男二#</a></li>
+						<li><a href="">#完美日记地理眼影#</a></li>
+						<li><a href="">#近视的人智商更高#</a></li>
+						<li><a href="">#赵丽颖复工首封#</a></li>
+						<li><a href="">#贾玲情商有多高#</a></li>
+						<li><a href="">#肖战宋祖儿 最好的夏天#</a></li>
+						<br>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="footer-list">
+			<div>
+				<a href="#"><span class="iconfont">&#xe666;</span>微博客服</a>
+			</div>
+			<div>
+				<a href="#">客服热线</a>
+			</div>
+			<div>
+				<a href="#">意见反馈</a>
+			</div>
+			<div>
+				<a href="#">舞弊举报</a>
+			</div>
+			<div>
+				<a href="#">开放平台</a>
+			</div>
+			<div>
+				<a href="#">微博招聘</a>
+			</div>
+			<div>
+				<a href="#">新浪网导航</a>
+			</div>
+			<div>
+				<a href="#">投诉处理大厅</a>
+			</div>
+			<div>
+				<a href="#">DMCA投诉/Report</a>
+			</div>
+			<div>
+				<a href="#">京ICP证100780号</a>
+			</div>
+			<div>
+				<a href="#">互联网药品服务许可证</a>
+			</div>
+			<div>
+				<a href="#">互联网医疗保健许可证</a>
+			</div>
+			<div>
+				<a href="#">京网文[2017]10291-1172号</a>
+			</div>
+			<div>
+				<a href="#">京ICP12002058号</a>
+			</div>
+			<div>
+				<a href="#">增值电信业务经营许可证B2-20140447</a>
+			</div>
+			<div>
+				<a href="#">Copyright&copy;2009-2019 WEIBO 北京微梦创科网络技术有限公司</a>
+			</div>
+			<div>
+				<a href="#"><span class="iconfont">&#xe648;</span>京公网安备11000002000019号</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+<script type="text/javascript"
+	src="../resources/js/common/jquery.toast.min.js"></script>
+
+<script type="text/javascript" src="../resources/js/frontend/login.js"></script>
+<script type='text/javascript' src='../resources/js/common/common.js'
+	charset='utf-8'></script>
+<!-- 搜索提示 -->
+<script
+	src="../resources/js/common/hot-search/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="../resources/js/frontend/head.js"></script>
+ <!-- 弹框 -->
+							<script>
+							   $(".alert-remove").click(function() {
+									$(".alert-delete").hide();
+								})
+								/* $(document).on("click",".delete-fans",function(e){
+									$(".alert-delete").show();
+								});  */
+								$(".delete-yes").click(function() {
+									$(".alert-delete").hide();
+								}); 
+								$(".delete-cancel").click(function() {
+									$(".alert-delete").hide();
+								}); 
+							</script>
+<script type="text/javascript">
+	//因为使用了document，所以js需要放在需要执行的代码下面生效才能生效
+	var li = document.getElementById('lunbo').getElementsByTagName("li");
+	var num = 0;
+	var len = li.length;
+
+	setInterval(function() {
+		li[num].style.display = "none";
+		num = ++num == len ? 0 : num;
+		li[num].style.display = "inline-block";
+
+	}, 4000); //切换时间
+
+	// var buttons = document.getElementById('buttons').getElementsByTagName('span');
+	//        var index = 1;
+
+	//        function buttonsShow() {
+	//            //这里需要清除之前的样式
+	//            for (var i = 0; i < buttons.length; i++) {
+	//                if (buttons[i].className == 'on') {
+	//                    buttons[i].className = '';
+	//                }
+	//            }
+
+	//            //数组从0开始，故index需要-1
+	//            buttons[index - 1].className = 'on';
+	//        }         
+	function Login() {
+		alert("当前页面即可登录！");
+	}
+
+	function Index() {
+		alert("当前页面为首页！");
+	}
+</script>
+
+</html>

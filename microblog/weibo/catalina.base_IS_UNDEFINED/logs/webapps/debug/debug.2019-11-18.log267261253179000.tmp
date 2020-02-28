@@ -1,0 +1,344 @@
+2019-11-18 00:50:04.545 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 00:50:04.645 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 100(Integer)
+2019-11-18 00:50:04.686 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 00:50:04.722 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 00:50:04.722 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 00:50:04.724 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 01:04:04.551 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id w.user_id, w.content, w.publish_time, w.comment_count, w.praise_count, w.foward_count, u.user_id, u.head_img, u.nick_name, img_addr, priority, FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:04:04.582 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 100(Integer)
+2019-11-18 01:05:07.117 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id w.user_id, content, publish_time, comment_count, praise_count, foward_count, u.user_id, u.head_img, u.nick_name, img_addr, priority, FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:05:07.147 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 100(Integer)
+2019-11-18 01:05:47.381 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id w.user_id, content, publish_time, comment_count, praise_count, foward_count, u.head_img, u.nick_name, img_addr, priority, FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:05:47.412 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 100(Integer)
+2019-11-18 01:06:23.876 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, u.head_img, u.nick_name, img_addr, priority, FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:06:23.912 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 100(Integer)
+2019-11-18 01:07:17.695 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name, img_addr, priority, FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:07:17.727 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 100(Integer)
+2019-11-18 01:09:21.767 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name, img_addr, priority FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:09:21.797 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 100(Integer)
+2019-11-18 01:10:08.643 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:10:08.671 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 100(Integer)
+2019-11-18 01:10:08.691 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 01:10:08.698 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 01:10:08.698 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 01:10:08.699 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 01:16:31.475 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:16:31.507 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 01:16:31.523 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 01:16:31.530 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 01:16:31.531 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 01:16:31.532 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 01:17:03.984 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:17:04.010 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 01:17:04.030 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 01:17:04.036 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 01:17:04.037 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 01:17:04.038 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 01:18:27.485 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:18:27.511 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 01:18:27.527 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 01:18:27.533 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 01:18:27.534 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 01:18:27.535 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 01:18:43.963 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:18:43.997 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 01:18:44.012 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 01:18:44.019 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 01:18:44.019 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 01:18:44.021 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 01:22:38.032 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 01:22:38.055 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 01:22:38.071 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 01:22:38.079 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 01:22:38.081 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 01:22:38.082 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 14:35:57.166 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 14:35:57.258 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 14:35:57.288 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 14:35:57.296 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 14:35:57.297 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 14:35:57.298 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 14:36:43.360 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 14:36:43.396 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 14:36:43.429 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 14:36:43.436 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 14:36:43.437 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 14:36:43.438 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 14:38:25.627 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 14:38:25.654 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 14:38:25.669 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 14:41:28.652 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 14:41:28.677 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 14:41:28.693 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 14:41:28.700 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 14:41:28.700 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 14:41:28.701 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 15:12:32.643 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 15:12:32.671 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 15:12:32.687 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 15:13:14.443 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 15:13:14.472 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 15:13:14.486 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 15:13:14.493 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 15:13:14.493 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 15:13:14.494 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 15:16:01.358 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 15:16:01.385 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 15:16:01.400 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 15:16:01.407 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 15:16:01.407 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 15:16:01.409 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 15:16:24.282 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 15:16:24.316 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 15:16:24.331 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 15:17:02.317 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 15:17:02.350 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 15:17:02.366 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 15:17:02.374 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 15:17:02.374 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 15:17:02.386 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 15:22:15.789 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 15:22:15.816 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 15:22:15.831 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 15:22:15.837 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 15:22:15.837 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 15:22:15.839 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 15:39:15.162 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 15:39:15.201 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 15:39:15.222 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 2
+2019-11-18 15:41:05.829 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 15:41:05.862 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 15:41:05.876 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 2
+2019-11-18 15:54:48.926 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 15:54:48.960 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 15:54:48.976 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 2
+2019-11-18 15:54:48.983 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryCountByWeiboId - ==>  Preparing: SELECT count(1) FROM tb_weibo_img WHERE weibo_id = ? 
+2019-11-18 15:54:48.983 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryCountByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 15:54:48.985 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryCountByWeiboId - <==      Total: 1
+2019-11-18 15:56:52.850 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 15:56:52.883 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 15:56:52.898 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 15:56:52.906 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 15:56:52.906 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 15:56:52.907 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 15:57:22.060 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 15:57:22.090 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 15:57:22.105 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 16:00:32.468 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:00:32.498 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 16:00:32.513 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 16:01:19.246 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:01:19.274 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 16:01:19.288 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 16:02:05.421 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 16:02:05.447 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 16:02:05.468 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 2
+2019-11-18 16:02:05.475 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryCountByWeiboId - ==>  Preparing: SELECT count(1) FROM tb_weibo_img WHERE weibo_id = ? 
+2019-11-18 16:02:05.475 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryCountByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 16:02:05.476 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryCountByWeiboId - <==      Total: 1
+2019-11-18 16:03:22.387 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:03:22.416 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 16:03:22.430 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 16:04:13.106 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:04:13.135 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 2(Integer)
+2019-11-18 16:04:13.150 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 2
+2019-11-18 16:04:13.156 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:04:13.156 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:04:13.158 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:04:47.810 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:04:47.844 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 5(Integer)
+2019-11-18 16:04:47.861 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 16:04:47.869 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:04:47.869 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:04:47.870 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:06:04.933 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:06:04.975 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 5(Integer)
+2019-11-18 16:06:04.992 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 16:06:05.000 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:06:05.001 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:06:05.002 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:08:13.542 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:08:13.604 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 16:08:13.625 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 16:08:13.634 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:08:13.634 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:08:13.635 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:11:31.714 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:11:31.740 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 16:11:31.754 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 16:11:31.762 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:11:31.762 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:11:31.763 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:14:03.678 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT w.weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:14:03.730 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 16:14:03.753 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 16:14:03.764 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:14:03.765 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:14:03.767 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:14:40.782 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT w.weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:14:40.818 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 16:14:40.837 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 16:14:40.848 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:14:40.849 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:14:40.850 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:16:55.107 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT w.weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:16:55.140 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 16:16:55.155 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 16:16:55.163 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:16:55.163 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:16:55.165 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:25:43.647 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT w.weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:25:43.679 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 16:25:43.695 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 16:25:43.703 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:25:43.703 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:25:43.705 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:29:03.769 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT w.weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:29:03.798 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 16:29:03.814 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 3
+2019-11-18 16:29:03.821 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:29:03.821 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:29:03.837 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:31:40.769 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT * FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:31:40.805 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 16:31:40.865 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 9
+2019-11-18 16:31:40.904 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:31:40.905 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:31:40.906 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:33:20.176 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT * FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:33:20.212 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 5(Integer)
+2019-11-18 16:33:20.252 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 5
+2019-11-18 16:33:20.259 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 16:33:20.259 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 16:33:20.267 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 2
+2019-11-18 16:33:20.268 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 16:33:20.268 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 2(Long)
+2019-11-18 16:33:20.269 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 0
+2019-11-18 16:33:20.304 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:33:20.305 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:33:20.306 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:34:24.428 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT * FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:34:24.457 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 5(Integer)
+2019-11-18 16:34:24.473 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 5
+2019-11-18 16:34:24.480 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 16:34:24.480 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 16:34:24.486 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 2
+2019-11-18 16:34:24.487 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 16:34:24.487 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 2(Long)
+2019-11-18 16:34:24.488 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 0
+2019-11-18 16:34:24.517 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:34:24.518 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:34:24.519 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:34:58.682 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT * FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:34:58.724 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 5(Integer)
+2019-11-18 16:34:58.742 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 5
+2019-11-18 16:34:58.749 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 16:34:58.749 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 16:34:58.751 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 2
+2019-11-18 16:34:58.751 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 16:34:58.751 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 2(Long)
+2019-11-18 16:34:58.752 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 0
+2019-11-18 16:34:58.782 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:34:58.783 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:34:58.784 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 16:35:36.181 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT * FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 16:35:36.213 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 5(Integer)
+2019-11-18 16:35:36.229 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 5
+2019-11-18 16:35:36.236 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 16:35:36.236 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 16:35:36.243 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 2
+2019-11-18 16:35:36.244 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 16:35:36.244 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 2(Long)
+2019-11-18 16:35:36.245 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 0
+2019-11-18 16:35:36.277 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id = u.user_id 
+2019-11-18 16:35:36.277 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 16:35:36.278 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 19:46:13.819 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT * FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 19:46:13.854 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 5(Integer)
+2019-11-18 19:46:13.871 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 5
+2019-11-18 19:46:13.888 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 19:46:13.888 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 3(Long)
+2019-11-18 19:46:13.890 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 2
+2019-11-18 19:46:13.890 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==>  Preparing: SELECT * FROM tb_weibo_img WHERE weibo_id = ? ORDER BY PRIORITY DESC 
+2019-11-18 19:46:13.890 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - ==> Parameters: 2(Long)
+2019-11-18 19:46:13.893 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.queryByWeiboId - <==      Total: 10
+2019-11-18 19:46:13.893 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? 
+2019-11-18 19:46:13.894 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 19:46:13.895 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 19:47:51.714 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==>  Preparing: INSERT INTO tb_weibo(user_id,content, publish_time, comment_count,praise_count, foward_count) VALUES(?,?, ?,?, ?,?, ?) 
+2019-11-18 19:47:51.776 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==> Parameters: 23(Long), 今天熱搜沙发我坐定哒~(String), null, 2019-11-18 19:47:51.689(Timestamp), null, null, null
+2019-11-18 19:53:28.895 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==>  Preparing: INSERT INTO tb_weibo(user_id,content, publish_time, comment_count,praise_count, foward_count) VALUES(?,?, ?,?, ?,?, ?) 
+2019-11-18 19:53:28.929 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==> Parameters: 23(Long), 今天熱搜沙发我坐定哒~(String), null, 2019-11-18 19:53:28.56(Timestamp), null, null, null
+2019-11-18 19:58:56.864 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==>  Preparing: INSERT INTO tb_weibo(user_id,content, publish_time, comment_count,praise_count, foward_count) VALUES(?,?, ?,?, ?,?, ?) 
+2019-11-18 19:58:56.896 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==> Parameters: 23(Long), 今天熱搜沙发我坐定哒~(String), null, 2019-11-18 19:58:56.538(Timestamp), null, null, null
+2019-11-18 20:02:50.274 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==>  Preparing: INSERT INTO tb_weibo(user_id,content, publish_time,comment_count, praise_count,foward_count) VALUES(?,?, ?,?, ?,?) 
+2019-11-18 20:02:50.311 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==> Parameters: 23(Long), 今天熱搜沙发我坐定哒~(String), 2019-11-18 20:02:50.242(Timestamp), null, null, null
+2019-11-18 20:02:50.325 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - <==    Updates: 1
+2019-11-18 20:02:50.421 [main] DEBUG com.gdcp.weibo.util.ImageUtil - current relativeAddr addr is:\upload\weibo\author23\4\2019111820025018970.jpg
+2019-11-18 20:02:50.422 [main] DEBUG com.gdcp.weibo.util.ImageUtil - current complete addr is:E:\microblog\images\upload\weibo\author23\4\2019111820025018970.jpg
+2019-11-18 20:02:52.513 [main] DEBUG com.gdcp.weibo.util.ImageUtil - current relativeAddr addr is:\upload\weibo\author23\4\2019111820025256789.jpg
+2019-11-18 20:02:52.514 [main] DEBUG com.gdcp.weibo.util.ImageUtil - current complete addr is:E:\microblog\images\upload\weibo\author23\4\2019111820025256789.jpg
+2019-11-18 20:02:52.612 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.batchInsertWeiboImg - ==>  Preparing: INSERT INTO tb_weibo_img(img_addr,priority,weibo_id) VALUES ( ?, ?, ? ) , ( ?, ?, ? ) 
+2019-11-18 20:02:52.613 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.batchInsertWeiboImg - ==> Parameters: \upload\weibo\author23\4\2019111820025018970.jpg(String), null, 4(Long), \upload\weibo\author23\4\2019111820025256789.jpg(String), null, 4(Long)
+2019-11-18 20:02:52.614 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.batchInsertWeiboImg - <==    Updates: 2
+2019-11-18 20:10:26.504 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==>  Preparing: INSERT INTO tb_weibo(user_id,content, publish_time,comment_count, praise_count,foward_count) VALUES(?,?, ?,?, ?,?) 
+2019-11-18 20:10:26.539 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==> Parameters: 23(Long), 今天熱搜沙发我坐定哒~(String), 2019-11-18 20:10:26.484(Timestamp), null, null, null
+2019-11-18 20:10:26.552 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - <==    Updates: 1
+2019-11-18 20:10:26.560 [main] DEBUG com.gdcp.weibo.util.ImageUtil - current relativeAddr addr is:\upload\weibo\author23\5\2019111820102644075.jpg
+2019-11-18 20:10:26.561 [main] DEBUG com.gdcp.weibo.util.ImageUtil - current complete addr is:E:\microblog\images\upload\weibo\author23\5\2019111820102644075.jpg
+2019-11-18 20:10:26.749 [main] DEBUG com.gdcp.weibo.util.ImageUtil - current relativeAddr addr is:\upload\weibo\author23\5\2019111820102670954.jpg
+2019-11-18 20:10:26.749 [main] DEBUG com.gdcp.weibo.util.ImageUtil - current complete addr is:E:\microblog\images\upload\weibo\author23\5\2019111820102670954.jpg
+2019-11-18 20:10:26.807 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.batchInsertWeiboImg - ==>  Preparing: INSERT INTO tb_weibo_img(img_addr,priority,weibo_id) VALUES ( ?, ?, ? ) , ( ?, ?, ? ) 
+2019-11-18 20:10:26.809 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.batchInsertWeiboImg - ==> Parameters: \upload\weibo\author23\5\2019111820102644075.jpg(String), null, 5(Long), \upload\weibo\author23\5\2019111820102670954.jpg(String), null, 5(Long)
+2019-11-18 20:10:26.810 [main] DEBUG com.gdcp.weibo.dao.WeiboImgDao.batchInsertWeiboImg - <==    Updates: 2
+2019-11-18 20:16:55.785 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==>  Preparing: INSERT INTO tb_weibo(user_id,content, publish_time,comment_count, praise_count,foward_count) VALUES(?,?, ?,?, ?,?) 
+2019-11-18 20:16:55.815 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - ==> Parameters: 23(Long), 今天熱搜沙发我坐定哒~(String), 2019-11-18 20:16:55.769(Timestamp), null, null, null
+2019-11-18 20:16:55.862 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.insertWeibo - <==    Updates: 1
+2019-11-18 20:47:14.303 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id publish_time, comment_count, praise_count, foward_count, user_id, u.headImg, u.nickName FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:47:14.331 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:48:31.840 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id publish_time, comment_count, praise_count, foward_count, user_id, u.headImg, u.nickName FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:48:31.875 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:48:59.642 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id publish_time, comment_count, praise_count, foward_count, w.user_id, u.headImg, u.nickName FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:48:59.672 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:49:28.817 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id publish_time, comment_count, praise_count, foward_count, w.user_id, headImg, nickName FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:49:28.847 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:50:05.831 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id publish_time, comment_count, praise_count, foward_count, w.user_id, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:50:05.857 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:50:49.359 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id publish_time, comment_count, praise_count, foward_count, user_id, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:50:49.387 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:51:20.437 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id w.user_id, publish_time, comment_count, praise_count, foward_count, u.user_id, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:51:20.468 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:52:08.810 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id w.user_id, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:52:08.837 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:52:34.407 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:52:34.441 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:52:34.460 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 10
+2019-11-18 20:52:34.466 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? 
+2019-11-18 20:52:34.467 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 20:52:34.468 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 20:55:13.508 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:55:13.532 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:55:13.548 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 10
+2019-11-18 20:55:13.554 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id=u.user_id 
+2019-11-18 20:55:13.554 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 20:55:13.555 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 20:58:45.118 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id=u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:58:45.165 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:58:45.186 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 10
+2019-11-18 20:58:45.193 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id=u.user_id 
+2019-11-18 20:58:45.193 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 20:58:45.195 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 20:58:46.169 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id=u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:58:46.202 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 20:58:46.220 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 10
+2019-11-18 20:58:46.226 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id=u.user_id 
+2019-11-18 20:58:46.226 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 20:58:46.228 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1
+2019-11-18 20:59:13.965 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id, user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id=u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 20:59:14.004 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 21:01:35.677 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==>  Preparing: SELECT weibo_id, w.user_id, content, publish_time, comment_count, praise_count, foward_count, head_img, nick_name FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id=u.user_id ORDER BY w.publish_time DESC LIMIT ?,?; 
+2019-11-18 21:01:35.714 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - ==> Parameters: 23(Long), 0(Integer), 10(Integer)
+2019-11-18 21:01:35.734 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboList - <==      Total: 10
+2019-11-18 21:01:35.742 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==>  Preparing: SELECT count(1) FROM tb_weibo w, tb_user u WHERE w.user_id= ? AND w.user_id=u.user_id 
+2019-11-18 21:01:35.742 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - ==> Parameters: 23(Long)
+2019-11-18 21:01:35.744 [main] DEBUG com.gdcp.weibo.dao.WeiboDao.queryWeiboCount - <==      Total: 1

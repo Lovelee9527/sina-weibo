@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主页</title>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<!-- import导入头部 导航栏部分 -->
+<link rel="import" href="head.html" id="page1" />
+<script type="text/javascript" src="../resources/js/frontend/head.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/frontend/homepage.css">
+	<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/weibocommon.css">
+<link rel="shortcut icon" href="../resources/images/weibo.ico">
+<link rel="stylesheet" type="text/css"
+	href="../resources/mineIcon/iconfont.css" />
+<!-- JQuery必需  -->
+<script src="../resources/js/common/jquery/jquery.min.2.2.4.js"></script>
+<script type="text/javascript"
+	src="../resources/js/common/jquery.screw.js"></script>
+<!--自定义-->
+<!-- toast必需链接 -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/jquery.toast.min.css">
+<script type="text/javascript"
+	src="../resources/js/common/jquery.toast.min.js"></script>
+
+<style type="text/css">
+body {
+	background: url(../resources/images/friendBgc.jpg);
+}
+
+/* 放大图片 */
+.article-context-img img {
+cursor:url("../resources/images/f1.png"),auto;
+}
+.bigimg-tip{
+	cursor:url("../resources/images/f2.png"),auto;	
+}
+.article{
+
+}
+.comment{
+    width: 100%;
+}
+
+</style>
+</head>
+<body>
+	<!-- 导航栏部分 -->
+	<script type="text/javascript">
+         document.write(page1.import.body.innerHTML);
+	</script>
+	<!-- 导航栏部分 -->
+
+
+	<div class="content-middle">
+	
+			<!-- 微博部分 -->
+			<div class="weibo-contentlist"
+				style="width: 595px; min-height: 0px; margin-left: 20px;">
+				<!-- 标题和搜索框 -->
+				<!-- <div class="publish-title">
+					<div>
+						<span>全部微博</span>
+					</div>
+					<input type="text" placeholder="搜索该用户的微博" /> <a href=""
+						style="text-decoration: none; float: right; margin-right: -160px;">
+						<span class="iconfont" style="color: #b5b8bd;">&#xe62d;</span>
+					</a>
+				</div> -->
+				<!-- 标题和搜索框 -->
+				<!-- 所有微博 -->
+				<div class="all-article" style="width: 100%; min-height: 0px; margin-top: 0px;margin-left: 150px;"
+					id="weiboItem">
+					<!-- 一条微博 -->
+					<!-- <div class="article" >
+						<div class="article-header">
+							点击图片跳转到页面
+							<div>
+								<a href=""><img src="../resources/images/lunbotu1.png" /></a>
+							</div>
+							<div class="article-info">
+								<div class="article-user">
+									<a href="">新浪微博</a>
+								</div>
+								<div class="article-time">
+									<a href="">11月15日 12：39</a>
+								</div>
+							</div>
+							<div class="arrow">
+								<span class="iconfont" id="arrow">&#xe625;</span>
+							</div>
+							<div class="arrow-context">
+								<ul>
+									<li><a href="">帮上头条</a></li>
+									<li><a href="">屏蔽这条微博</a></li>
+									<li><a href="">屏蔽新浪微博</a></li>
+									<li><a href="">取消关注新浪微博</a></li>
+									<li><a href="">投诉</a></li>
+								</ul>
+							</div>
+						</div>
+						文章部分
+						<div class="article-context">
+
+							<div class="article-context-title">这是新浪微博</div>
+							<div class="article-context-img">
+								<img src=""> <img src=""> <img src=""> <img
+									src=""> <img src=""> <img src=""> <img
+									src=""> <img src=""> <img src="">
+
+							</div>
+						</div>
+						底部
+						<div class="article-footer">
+							<div>
+								<span class="iconfont">&#xe641;</span><span class="footer-font">收藏</span>
+							</div>
+
+							<div>
+								<span class="iconfont">&#xe628;</span><span class="footer-font">转发</span>
+							</div>
+
+							<div id="comment-icon">
+								<span class="iconfont">&#xe62f;</span><span class="footer-font">评论</span>
+							</div>
+							<div>
+								<span class="iconfont">&#xe639;</span><span class="footer-font">1</span>
+							</div>
+						</div> -->
+					<!-- 评论 -->
+					<!-- <div class="comment">
+							<div class="comment-first">
+								<div>
+									<img src="../resources/images/lunbotu1.png"
+										style="width: 32px; height: 32px; margin-top: 15px; margin-left: 18px;">
+								</div>
+								<div>
+									<input class="comment-input" type="text"
+										style="margin-top: 15px; height: 27px; width: 518px; margin-left: 10px;" />
+								</div>
+								<div>
+									<button type="button" disabled class="comment-button">评论</button>
+								</div>
+
+							</div>
+							<div class="comment-list">
+								<div>
+									<span id="according-hot">按热度</span>
+
+									<div class="comment-list-context">
+
+										一条评论
+										<div class="hot"
+											style="width: 600px; min-height: 60px; margin: 0 auto; margin-top: 10px; display: flex; position: relative;">
+											<img src="../resources/images/lunbotu3.png"
+												style="width: 32px; height: 32px; margin-left: 18px; margin-right: 10px;">
+											<div>
+												<div>
+													<a href=""
+														style="font-size: 13px; text-decoration: none; color: #FA7D3C; margin-left: 20px;">新浪微博</a>:
+												</div>
+												<div
+													style="position: absolute; left: 145px; top: 0px; height: 60px; width: 350px; word-wrap: break-word; overflow: hidden; font-size: 13px;">
+													我是新浪微博！</div>
+												<div style="color: #808080; font-size: 10px;">11月18日
+													12:21</div>
+											</div>
+											<div style="position: absolute; right: 30px; bottom: 10px;">
+												<a class="receive-button" href=""
+													style="text-decoration: none; color: #333; font-size: 11px;">回复</a>&nbsp;|
+												<span class="iconfont"
+													style="margin-left: 5px; color: #515152;">&#xe639;</span>&nbsp;<span
+													style="font-size: 13px;">26</span>
+											</div>
+
+										</div>
+										一条评论
+
+									</div>
+
+								</div>
+								回复		
+								<div class="receive-detail"
+									style="display: none; width: 100%; height: 120px; background-color: #f2f2f5;">
+									<div
+										style="width: 100%; height: 100px; margin: auto auto auto 90px; background-color: #fff;">
+										<input class="receive-input"
+											style="font-size: 13px; color: #808080; height: 25px; width: 90%; margin: 20px auto auto 25px;"
+											type="text" value="回复@新浪微博:" />
+										<button
+											style="margin-right: 22px; float: right; border: none; color: #fff; width: 70px; height: 28px; background-color: #ff8140; line-height: 28px; border-radius: 2px; margin-top: 10px;"
+											type="button">评论</button>
+									</div>
+								</div>
+								回复
+								评论下的评论
+								<div
+									style="width: 100%; min-height: 80px; background-color: #f2f2f5;">
+									<div
+										style="width: 97%; min-height: 80px; margin-left: 90px; background-color: #eaeaec; border-bottom: 1px solid #d9d9d9; padding-left: 15px;">
+										<a href="#"
+											style="font-size: 13px; color: #FA7D3C; text-decoration: none;">哔哩哔哩</a><span>:</span><br>
+										<span style="font-size: 12px; word-break: break-word;">欢迎来到哔哩哔哩！</span>
+										<div style="float: right; margin: 30px 10px auto auto;">
+											<span class="receive-detail-switch"
+												style="font-size: 12px; color: #515152; cursor: pointer;">回复</span>
+											<span style="font-size: 12px; color: #515152;">|</span> <span
+												class="iconfont"
+												style="margin-left: 5px; color: #515152; cursor: pointer;">&#xe639;</span>
+											<span style="font-size: 12px; cursor: pointer;">109</span>
+										</div>
+									</div>
+								</div>
+								回复		
+								<div class="receive-detail-last"
+									style="display: none; width: 100%; height: 120px; background-color: #f2f2f5;">
+									<div
+										style="width: 100%; height: 100px;; background-color: #fff; margin-left: 90px;">
+										<input class="receive-input"
+											style="font-size: 13px; color: #808080; height: 25px; width: 90%; margin: 20px auto auto 25px;"
+											type="text" value="回复@新浪微博:" />
+										<button
+											style="margin-right: 22px; float: right; border: none; color: #fff; width: 70px; height: 28px; background-color: #ff8140; line-height: 28px; border-radius: 2px; margin-top: 10px;"
+											type="button">评论</button>
+									</div>
+								</div>
+								回复
+							 评论下的评论
+							</div> -->
+					<!-- 评论 -->
+
+					<!-- </div> -->
+					<!-- 一条微博 -->
+
+				</div>
+				<!-- 所有微博 -->
+
+				<!-- 加载提示符 -->
+				<!-- <div class="ajaxtips"
+					style="display: none; margin-left: 260px; margin-bottom: 50px;">
+					Loding.....</div> -->
+				<!--加载完全部的提示符  -->
+				<!-- <div class="load-end" style="display:none;margin-left:260px;margin-bottom:50px;">
+					 已经到底了哦...</div> -->
+				<!-- 没微博了 -->
+				<div class="load-end"
+					style="width: 100%; height: 30px; background-color: #fff; line-height: 30px;margin-left: 150px;
+					 margin-bottom: 20px; margin-top: 15px; text-align: center; font-size: 12px; color: #808080;">
+					已读完该微博详情，点击 <a href="mine" class="find-weibo"
+						style="text-decoration: none; color: #F7691D;">发现</a> 返回首页查看更多微博
+				</div>
+				<!-- 没微博了 -->
+
+			</div>
+			<!-- 微博部分 -->
+
+		</div>
+		<!-- 内容部分 -->
+	</div>
+	</div>
+</body>
+                      <!-- 弹框 -->
+							<script>
+							  /* $(".alert-remove").click(function() {
+									$(".alert-delete").hide();
+								})
+								$(document).on("click",".delete-fans",function(e){
+									$(".alert-delete").show();
+								}); 
+								$(".delete-cancel").click(function() {
+									$(".alert-delete").hide();
+								}); */
+							</script>
+<script type="text/javascript">
+		$(document).ready(function(){
+			
+			
+			//箭头部分
+			$("#arrow").click(function(event){
+				 event.stopPropagation();
+				$(".arrow-context").toggle();
+			});
+			$(window).click(function(){		
+				$(".arrow-context").hide();
+				});
+			
+			
+		});
+		
+	</script>
+<script type="text/javascript" src="../resources/js/common/common.js"></script>
+<script type="text/javascript" src="../resources/js/common/weibocommon.js"></script>
+<script type="text/javascript" src="../resources/js/common/commentandreply.js"></script>
+<script type="text/javascript" src="../resources/js/frontend/weibodetail.js"></script>
+<!-- 搜索提示 -->
+<script
+	src="../resources/js/common/hot-search/js/jquery-ui-1.9.2.custom.min.js"></script>
+
+</html>

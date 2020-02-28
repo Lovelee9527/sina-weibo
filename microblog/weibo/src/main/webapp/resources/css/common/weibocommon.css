@@ -1,0 +1,35 @@
+/* 放大图片 */
+.article-context-img img {
+/* cursor:url("../images/f1.png"),auto; */
+}
+.article{
+	position: relative;
+}
+.small-img img{
+	min-width:480px;
+/* 	myimg:expression_r(onload=function(){this.style.width=(this.offsetWidth > 350)?"350px":"auto"}); */
+	height: auto;
+}
+.small-img{				
+	 display: flex;	
+	 justify-content: center;	
+	align-items: center;			
+}
+.bigimg-tip{
+	/* padding-top: 25px; */
+	padding:20px;
+	box-sizing: border-box;	
+	min-width: 450px;
+	min-height:300px; 
+	/* cursor:url("../images/f2.png"),auto; */		
+	background-color: #fff;	
+	z-index: 99999;
+	position: absolute;
+	top: 60px;
+	left: 40px;
+	
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: none;
+}
+/* 放大图片 */

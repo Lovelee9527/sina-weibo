@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<!-- JQuery必需  -->
+<script src="../resources/js/common/jquery/jquery.min.2.2.4.js"></script>
+<!-- import导入头部 导航栏部分 -->
+<link rel="import" href="head.html" id="page1"/>
+<script type="text/javascript" src="../resources/js/frontend/head.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/frontend/mynotify.css">
+	<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/weibocommon.css">
+<link rel="shortcut icon" href="../resources/images/weibo.ico">
+<link rel="stylesheet" type="text/css"
+	href="../resources/mineIcon/iconfont.css" />
+<!--自定义-->
+<!-- toast必需链接 -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/common/jquery.toast.min.css">
+<script type="text/javascript"
+	src="../resources/js/common/jquery.toast.min.js"></script>
+<style type="text/css">
+/* 放大图片 */
+.article-context-img img {
+cursor:url("../resources/images/f1.png"),auto;
+}
+.bigimg-tip{
+	cursor:url("../resources/images/f2.png"),auto;	
+}
+.other-comment:last-child{
+margin-bottom:30px;
+}
+</style>
+</head>
+<body>
+	<!-- 导航栏部分 -->
+	<script type="text/javascript">
+         document.write(page1.import.body.innerHTML);
+	</script>
+	<!-- 导航栏部分 -->
+	
+	<div
+		style="margin-top: 83px; position: fixed; margin-left: 290px; font-size: 13px; color: #fff; z-index: 9999;">
+		<p class="p1" type="button"
+			style="background-color: rgba(0, 0, 0, .08); width: 150px; cursor: pointer;">@我的</p>
+		<p class="p2" type="button" style="width: 150px; cursor: pointer;">评论</p>
+		<p class="p4" type="button" style="width: 150px; cursor: pointer;">关注</p>
+		<p class="p3" type="button" style="width: 150px; cursor: pointer;">赞</p>
+	</div>
+	<div class="content">
+		<!-- 左边部分 -->
+		<div class="content-left">
+			<div>
+				<span class="content-left-title">我的消息箱</span>
+			</div>
+			<div class="content-left-list">
+				<ul>
+					<!-- <li></li>
+					<li></li>
+					<li></li>
+                    <li></li> -->
+
+					<!-- <li>私信</li>
+					<li>未关注人私信</li>
+					<li>群通知</li>
+					<li>订阅消息</li> -->
+				</ul>
+			</div>
+		</div>
+		<!-- 左边部分 -->
+		<div class="div1"">
+			<div class="callme-middle">
+				<!-- 中间部分 -->
+				<div class="callme-middle-top">
+					<span style="font-weight: bold;" class="receive">@我的微博</span> <span
+						class="publish">收到的回复</span> 
+						<!-- <input type="text"
+						placeholder="查找@我的微博" id="comment-input" /> <span
+						class="iconfont" id="callme-search">&#xe62d;</span> -->
+				</div>
+				<!-- 微博列表 -->
+				<div id="atmy-weibo-list">
+				<!-- 每条@我的微博 -->
+				<!-- <div class="other-comment" style="width: 100%;min-height: 100px;background-color: #fff;margin-top: 15px;padding-top: 18px;position: relative;">
+					<a href=""><img src="images/lunbotu1.png" style="width: 50px;height: 50px;border-radius: 50%;margin-left: 20px;"></a>
+					<div style="display: inline-block;margin-left: 5px;">
+						<a href="#" class="callme-username" >新浪微博</a>
+						<p style="color: #808080;font-size: 12px;margin-top: -5px;">11月13日 00：31</p>
+					</div>
+					<div style="width:90%;margin:0 auto;">
+							<div style="width:80%;">
+								<a href="#" class="callmelink" style="margin-left:50px">@新浪微博</a>
+								<div style="margin-left:50px;">
+									<span class="callme-detail" style="font-size:14px;word-break: break-word;width:70%;">
+									
+										就这样吧</span>
+								</div>
+							</div>
+						
+						<div style="width:60%;margin-left:45px;margin-top:10px;display:flex;flex-wrap: wrap;">
+							<img src="images/lunbotu1.png" style="width:100px;height:100px;margin-left:5px;margin-top:5px;"/>
+							<img src="images/lunbotu1.png" style="width:100px;height:100px;margin-left:5px;margin-top:5px;"/>
+							<img src="images/lunbotu1.png" style="width:100px;height:100px;margin-left:5px;margin-top:5px;"/>
+							<img src="images/lunbotu1.png" style="width:100px;height:100px;margin-left:5px;margin-top:5px;"/>
+							<img src="images/lunbotu1.png" style="width:100px;height:100px;margin-left:5px;margin-top:5px;"/>
+							<img src="images/lunbotu1.png" style="width:100px;height:100px;margin-left:5px;margin-top:5px;"/>
+							<img src="images/lunbotu1.png" style="width:100px;height:100px;margin-left:5px;margin-top:5px;"/>
+							<img src="images/lunbotu1.png" style="width:100px;height:100px;margin-left:5px;margin-top:5px;"/>
+							<img src="images/lunbotu1.png" style="width:100px;height:100px;margin-left:5px;margin-top:5px;"/>
+						</div>
+					</div>
+					
+					<div class="callme-footer" style="padding-bottom: 5px;border-bottom: 1px solid #d9d9d9;width: 100%;display: flex;margin-top: 10px;border-top: 1px solid #f2f2f5;font-size: 13px;padding-top: 4px ;">
+						<div><span class="iconfont">&#xe641;</span>收藏</div>
+						<div><span class="iconfont">&#xe628;</span>转发</div>
+						<div class="callme-word"><span class="iconfont">&#xe62f;</span>评论</div>
+						<div><span class="iconfont">&#xe639;</span> 赞</div>
+					</div>
+					<div class="callme-switch" style="display: none;width: 600px;height:90px ;background-color: #f2f2f5;position: relative;">
+						<img src="images/lunbotu4.png" style="width: 32px;height: 32px;margin: 15px auto auto 25px;">
+						<div style="display: inline-block;position: absolute;top:15px;margin-left: 10px;"><input type="text" style="width:500px;height: 24px;" /></div>
+						<div><button type="button" style="border: none;background-color: #FA7D3C;color: #fff;width: 50px;
+							height: 25px;float: right;margin-right: 30px;margin-top: 5px;">评论</button></div>
+					</div>
+				</div> -->
+				<!-- 每条@我的微博 -->
+				
+				</div>
+				<!-- 分割线 -->
+				<div id="reply-me">
+				<!-- 每条收到的回复 -->
+				 <!-- <div class="comment-from"
+					style="width: 100%; min-height: 165px; background-color: #fff; margin-top: 15px; padding-top: 18px;">
+					<a href=""><img src=""
+						style="width: 50px; height: 50px; border-radius: 50%; margin-left: 20px;"></a>
+					<div style="display: inline-block; margin-left: 5px;">
+						<p style="font-size: 13px; font-weight: bold;">新浪微博</p>
+						<p style="color: #808080; font-size: 12px; margin-top: -5px;">11月13日
+							00：31</p>
+					</div>
+					<div
+						style="font-size: 13px; margin-left: 20px; min-height: 20px; line-height: 20px; margin-left: 80px; margin-top: -5px; width: 80%;">
+						回复<span><a href=""
+							style="text-decoration: none; font-size: 12px; color: #eb7350;">@腾讯微博</a>:
+						</span><span style="font-size: 13px; width: 80%; word-break: break-word;">最近好吗？
+						</span>
+					</div>
+					<div
+						style="cursor: pointer; width: 500px; min-height: 30px; background-color: #f2f2f5; margin-top: 10px; margin-left: 78px;">
+						<span style="font-size: 13px; color: #808080; margin-left: 15px;">回复我的评论:</span>
+						<a href=""
+							style="text-decoration: none; color: #333; font-size: 13px; word-wrap: break-word;">挺好的！</a>
+					</div>
+					<div class="other-comment-footer"
+						style="padding-bottom: 5px; border-bottom: 1px solid #d9d9d9; width: 100%; display: flex; margin-top: 10px; border-top: 1px solid #f2f2f5; font-size: 13px; padding-top: 4px;">
+						<div>
+							<span class="iconfont">&#xe62d;</span> 查看对话
+						</div>
+						<div class="comment-word">
+							<span class="iconfont">&#xe62f;</span> 回复
+						</div>
+						<div>
+							<span class="iconfont">&#xe639;</span> 赞
+						</div>
+					</div>
+					<div class="comment-switch"
+						style="display: none; width: 600px; height: 90px; background-color: #f2f2f5; position: relative;">
+						<img src=""
+							style="width: 32px; height: 32px; margin: 15px auto auto 25px;">
+						<div
+							style="display: inline-block; position: absolute; top: 15px; margin-left: 10px;">
+							<input type="text" style="width: 500px; height: 24px;" />
+						</div>
+						<div>
+							<button type="button"
+								style="border: none; background-color: #FA7D3C; color: #fff; width: 50px; height: 25px; float: right; margin-right: 30px; margin-top: 5px;">评论</button>
+						</div>
+					</div>
+				</div>  -->
+				<!-- 每条收到的回复 -->
+               </div>
+               
+
+			</div>
+		</div>
+		<div class="div2" style="display: none;">
+			<div class="content-middle">
+				<!-- 中间部分 -->
+				<div class="content-middle-top">
+					<span style="font-weight: bold;" class="receive" id="comment-from">收到的评论</span> <span
+						class="publish" id="comment-to">发出的评论</span>
+						<!--  <input type="text"
+						placeholder="查找评论内容或评论人" id="comment-input" /> 
+						<span
+						class="iconfont" id="comment-search">&#xe62d;</span> -->
+				</div>
+				<div id="comment-me-list">				
+				<!-- 每条收到的评论 -->
+				<!-- <div class="comment-from"
+					style="width: 100%; min-height: 165px; background-color: #fff; margin-top: 15px; padding-top: 18px;">
+					<a href=""><img src=""
+						style="width: 50px; height: 50px; border-radius: 50%; margin-left: 20px;"></a>
+					<div style="display: inline-block; margin-left: 5px;">
+						<p style="font-size: 13px; font-weight: bold;">新浪微博</p>
+						<p style="color: #808080; font-size: 12px; margin-top: -5px;">11月13日
+							00：31</p>
+					</div>
+					<div
+						style="font-size: 13px; margin-left: 20px; min-height: 20px; line-height: 20px; margin-left: 80px; margin-top: -5px; width: 80%;">
+						回复<span><a href=""
+							style="text-decoration: none; font-size: 12px; color: #eb7350;">@腾讯微博</a>:
+						</span><span style="font-size: 13px; width: 80%; word-break: break-word;">最近好吗？
+						</span>
+					</div>
+					<div
+						style="cursor: pointer; width: 500px; min-height: 30px; background-color: #f2f2f5; margin-top: 10px; margin-left: 78px;">
+						<span style="font-size: 13px; color: #808080; margin-left: 15px;">回复我的评论:</span>
+						<a href=""
+							style="text-decoration: none; color: #333; font-size: 13px; word-wrap: break-word;">挺好的！</a>
+					</div>
+					<div class="other-comment-footer"
+						style="padding-bottom: 5px; border-bottom: 1px solid #d9d9d9; width: 100%; display: flex; margin-top: 10px; border-top: 1px solid #f2f2f5; font-size: 13px; padding-top: 4px;">
+						<div>
+							<span class="iconfont">&#xe62d;</span> 查看对话
+						</div>
+						<div class="comment-word">
+							<span class="iconfont">&#xe62f;</span> 回复
+						</div>
+						<div>
+							<span class="iconfont">&#xe639;</span> 赞
+						</div>
+					</div>
+					<div class="comment-switch"
+						style="display: none; width: 600px; height: 90px; background-color: #f2f2f5; position: relative;">
+						<img src=""
+							style="width: 32px; height: 32px; margin: 15px auto auto 25px;">
+						<div
+							style="display: inline-block; position: absolute; top: 15px; margin-left: 10px;">
+							<input type="text" style="width: 500px; height: 24px;" />
+						</div>
+						<div>
+							<button type="button"
+								style="border: none; background-color: #FA7D3C; color: #fff; width: 50px; height: 25px; float: right; margin-right: 30px; margin-top: 5px;">评论</button>
+						</div>
+					</div>
+				</div>  -->
+				
+				</div>
+				<!-- 分割线 -->
+				<div id="comment-to-list">
+				 <!-- 每条发出的评论 -->
+				 <!-- <div class="comment-to"
+					style="display: none; width: 100%; min-height: 140px; background-color: #fff; margin-top: 15px; padding-top: 18px; position: relative;">
+					<a href=""><img src=""
+						style="width: 50px; height: 50px; border-radius: 50%; margin-left: 20px;"></a>
+					<div style="display: inline-block; margin-left: 5px;">
+						<p style="font-size: 13px; font-weight: bold;">新浪微博</p>
+						<p style="color: #808080; font-size: 12px; margin-top: -5px;">11月13日
+							00：31</p>
+					</div>
+					<div
+						style="font-size: 13px; margin-left: 20px; min-height: 20px; line-height: 20px; margin-left: 80px; margin-top: -5px; width: 80%;">
+						<span style="font-size: 13px; width: 80%; word-break: break-word;"><a
+							href="" style="text-decoration: none; color: #333;">最近好吗？</a> </span>
+					</div>
+					<div
+						style="cursor: pointer; width: 500px; min-height: 30px; background-color: #f2f2f5; margin-top: 10px; margin-left: 78px;">
+						<span style="font-size: 13px; color: #808080; margin-left: 15px;">评论<span>中国人民日报</span>的微博:
+						</span> <a href="" class="comment-source">挺好的！</a>
+					</div>
+					<p class="delete-comment">X</p>
+					弹框
+					<div class="alert-delete"
+						style="display: none; width: 220px; height: 210px; background-color: #fff; border-top: 2px solid #FA7D3C; position: absolute; right: 120px; top: 80px;">
+						<div
+							style="position: relative; width: 50px; height: 50px; background-color: #0099FF; border-radius: 50%; margin: 50px auto;">
+							<h1
+								style="color: #fff; font-size: 30px; text-align: center; line-height: 50px;">?</h1>
+						</div>
+						<div style="text-align: center; margin-top: -30px; height: 40px;">确定要删除该回复码？</div>
+						<div
+							style="width: 220px; height: 50px; background-color: #f2f2f5; padding-top: 10px;">
+							<button type="button"
+								style="border: none; color: #fff; background-color: #FA7D3C; font-size: 16px; width: 75px; height: 40px; border-radius: 2px; margin-left: 25px;">确定</button>
+							<button class="delete-cancel" type="button"
+								style="border: 1px solid #ccc; color: #333; background-color: #fff; font-size: 16px; width: 75px; height: 40px; border-radius: 2px; margin-left: 15px;">取消</button>
+							<span class="alert-remove">X</span>
+						</div>
+					</div>
+					弹框
+				</div> -->
+				<!-- 每条发出的评论 -->
+               </div>
+
+			</div>
+		</div>
+		<div class="div3" style="display: none;">
+			<!-- 赞 -->
+			<div class="support">
+				<div class="support-title">
+					<span>收到的赞</span>
+				</div>
+
+                <!-- 收到的赞列表 -->
+                <div id="receive-praise-list">
+                <!-- 每条 -->
+				<!-- <div
+					style="width: 600px; min-height: 130px; background-color: #fff; margin-top: 15px; padding-top: 18px; position: relative; margin-left: 250px;">
+					<a href=""><img src=""
+						style="width: 50px; height: 50px; border-radius: 50%; margin-left: 20px;"></a>
+					<div style="display: inline-block; margin-left: 5px;">
+						<a href="" class="support-user">新浪微博</a>
+						<p style="color: #808080; font-size: 12px; margin-top: -5px;">11月13日
+							00：31</p>
+					</div>
+					<div
+						style="font-size: 13px; margin-left: 20px; min-height: 20px; line-height: 20px; margin-left: 80px; margin-top: -5px; width: 80%;">
+						<span style="font-size: 13px; width: 80%; word-break: break-word;"><span
+							style="text-decoration: none; color: #333;">赞了你的评论</span> </span>
+					</div>
+					<div
+						style="cursor: pointer; width: 500px; min-height: 30px; background-color: #f2f2f5; margin-top: 10px; margin-left: 78px;">
+						<a style="font-size: 13px; color: #FA7D3C; margin-left: 15px;">@人民网</a>
+						<a href="" class="support-source">挺好的！</a>
+					</div>
+				</div>
+				<div class="support-response">
+					<span class="iconfont">&#xe62f;</span> 回复
+				</div>
+				<div class="support-switch"
+					style="display: none; width: 600px; height: 90px; background-color: #f2f2f5; position: relative; margin-left: 250px;">
+					<img src=""
+						style="width: 32px; height: 32px; margin: 15px auto auto 25px;">
+					<div
+						style="display: inline-block; position: absolute; top: 15px; margin-left: 10px;">
+						<input type="text" style="width: 500px; height: 24px;" />
+					</div>
+					<div>
+						<button type="button"
+							style="border: none; background-color: #FA7D3C; color: #fff; width: 50px; height: 25px; float: right; margin-right: 30px; margin-top: 5px;">评论</button>
+					</div>
+				</div> -->
+				 <!-- 每条 -->
+				
+				
+				</div>
+				<!-- 收到的讚列表 -->
+			</div>
+			<!-- 赞 -->
+		</div>
+		
+		<!-- 关注部分 -->
+		<div class="div4" style="display: none;">
+			<!-- 赞 -->
+			<div class="support">
+				<div class="support-title">
+					<span>关注我的</span>
+				</div>
+
+                <!-- 收到的赞列表 -->
+                <div id="relation-list">
+                <!-- 每条 -->
+				<!-- <div
+					style="width: 600px; min-height: 100px; background-color: #fff; margin-top: 15px;
+					 padding-top: 20px; position: relative; margin-left: 250px;">
+					<a href=""><img src=""
+						style="width: 50px; height: 50px; border-radius: 50%; margin-left: 20px;"></a>
+					<div style="display: inline-block; margin-left: 5px;">
+						<a href="" class="support-user" style="top:25px">新浪微博</a>
+						<p style="color: #808080; font-size: 12px; 
+						margin-top: -5px;position: absolute;top:55px;">在 11月13日
+							00：31</p>
+						<span style="text-decoration: none; color: #333;font-size: 13px;
+						position:absolute;top:75px;"">关注了你</span>
+					</div>
+				</div> -->
+				 <!-- 每条 -->
+				
+				</div>
+				<!-- 收到的关注列表 -->
+			</div>
+			<!-- 赞 -->
+		</div>
+		<!-- 关注部分end -->
+
+	</div>
+</body>
+<script>
+	$(document).ready(
+			function() {
+				// 鼠标滚动监听
+				$(document).bind('mousewheel DOMMouseScroll', function(event) { //on也可以 bind监听
+					//Chorme
+					var wheel = event.originalEvent.wheelDelta;
+					var detal = event.originalEvent.detail;
+					if (event.originalEvent.wheelDelta) { //判断浏览器IE,谷歌滚轮事件               
+						if (wheel > 0) { //当滑轮向上滚动时  
+
+						}
+						if (wheel < 0) { //当滑轮向下滚动时  
+							$(".nav").css("box-shadow", " 1px 1px 8px #ccc");
+
+						}
+					} else if (event.originalEvent.detail) { //Firefox滚轮事件  
+						if (detal > 0) { //当滑轮向下滚动时  
+							$(".nav").css("box-shadow", " 1px 1px 8px #ccc");
+						}
+						if (detal < 0) { //当滑轮向上滚动时  
+
+						}
+					}
+				});
+
+				//监听是否到底顶部或者底部
+				$(document).ready(
+						function() {
+							$(window).scroll(
+									function() {
+
+										if ($(document).scrollTop() <= 0) {
+											$(".nav").css("box-shadow",
+													" 0 0 0 #fff");
+										}
+
+										if ($(document).scrollTop() >= $(
+												document).height()
+												- $(window).height()) {
+											//添加提示---已到达底部,没有更多微博了
+											//  alert("滚动条已经到达底部为" + $(document).scrollTop());
+										}
+									});
+
+							// 评论搜索
+							$("#comment-input").focus(function() {
+								$("#comment-input").removeAttr("placeholder");
+
+							});
+							$("#comment-input").blur(
+									function() {
+										$("#comment-input").attr("placeholder",
+												"查找评论内容或评论人");
+
+									});
+							$(".comment-word").click(function() {
+								$(".comment-switch").toggle();
+							});
+
+							
+							$(".alert-remove").click(function() {
+								$(".alert-delete").hide();
+							})
+							$(".delete-comment").click(function() {
+								$(".alert-delete").show();
+							})
+							$(".delete-cancel").click(function() {
+								$(".alert-delete").hide();
+							});
+							
+						});
+				
+				/**
+				 * 评论模块的显示隐藏点击事件 
+				 */
+				/* $(document).on("click","#btn-weibo-comment",function(e){
+					var weiboId=e.currentTarget.dataset.id;
+					var id = "#div-comment"+weiboId;
+					$(id).toggle();
+				}); */
+				/* /**
+				 * 赞我的微博模块的回复显示隐藏点击事件 
+				 */
+				 /**
+				$(document).on("click",".replydiv",function(e){
+					var id=e.currentTarget.dataset.id;
+					var divid = "#support-switch"+id;
+					$(divid).toggle();
+				}); */
+				//艾特我的
+				/* $(".callme-word").click(function() {
+					$(".callme-switch").toggle();
+				}); */
+				//艾特我的
+				/* $(".support-response").click(function() {
+					$(".support-switch").toggle();
+				}) */
+			})
+</script>
+
+<script type="text/javascript" src="../resources/js/common/common.js"></script>
+<script type="text/javascript" src="../resources/js/common/weibocommon.js"></script>
+<script type="text/javascript" src="../resources/js/common/commentandreply.js"></script>
+<script type="text/javascript" src="../resources/js/frontend/mynotify.js"></script>
+
+</html>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gdcp.weibo.dao.UserDao">
+	<select id="queryUser" resultType="com.gdcp.weibo.entity.User">
+		SELECT user_id,user_name,
+		password,nick_name,sex,province,
+		city,birthday,head_img,secret_answer,
+		create_time,last_edit_time,profile
+		FROM tb_user
+	</select>
+
+	<select id="queryUserList" resultType="com.gdcp.weibo.entity.User">
+		SELECT
+		*
+		FROM tb_user
+		<where>
+			<if test="userCondition!=null and userCondition.userName!=null">
+				AND user_name=#{userCondition.userName}
+			</if>
+			<if test="userCondition!=null and userCondition.nickName !=null">
+			AND nick_name like '%${userCondition.nickName}%'
+			</if>
+			<if test="userCondition!=null and userCondition.sex !=null">
+			AND sex=#{userCondition.sex}
+			</if>
+			<if test="userCondition!=null and userCondition.province !=null">
+			AND province=#{userCondition.province}
+			</if>
+			<if test="userCondition!=null and userCondition.city !=null">
+			AND city=#{userCondition.city}
+			</if>
+			<if test="userCondition!=null and userCondition.secretAnswer!=null">
+				AND secret_answer=#{userCondition.secretAnswer}
+			</if>
+		</where>
+	</select>
+
+	<select id="queryUserById" resultType="com.gdcp.weibo.entity.User"
+		parameterType="Long">
+		SELECT user_id,user_name,
+		password,nick_name,sex,province,
+		city,birthday,head_img,secret_answer,
+		create_time,last_edit_time,profile
+		FROM tb_user
+		WHERE
+		user_id = #{userId}
+	</select>
+
+	<select id="queryUserByNickName" resultType="com.gdcp.weibo.entity.User"
+		parameterType="String">
+		SELECT user_id,user_name,
+		password,nick_name,sex,province,
+		city,birthday,head_img,secret_answer,
+		create_time,last_edit_time,profile
+		FROM tb_user
+		WHERE
+		nick_name =
+		#{nickName}
+	</select>
+
+	<select id="queryUserByUmAndPw" resultType="com.gdcp.weibo.entity.User">
+		SELECT
+		user_id,user_name,
+		password,nick_name,sex,province,
+		city,birthday,head_img,secret_answer,
+		create_time,last_edit_time,profile
+		FROM tb_user
+		WHERE
+		user_name =
+		#{userName}
+		AND
+		password = #{password}
+	</select>
+
+	<!-- 注意if的最后一个标签内不用"," -->
+	<update id="updateUser" parameterType="com.gdcp.weibo.entity.User">
+		UPDATE tb_user
+		<set>
+			<if test="userName !=null">user_name=#{userName},</if>
+			<if test="password !=null">password=#{password},</if>
+			<if test="nickName !=null">nick_name=#{nickName},</if>
+			<if test="sex !=null">sex=#{sex},</if>
+			<if test="province !=null">province=#{province},</if>
+			<if test="city !=null">city=#{city},</if>
+			<if test="birthday !=null">birthday=#{birthday},</if>
+			<if test="headImg !=null">head_img=#{headImg},</if>
+			<if test="lastEditTime !=null">last_edit_time=#{lastEditTime},</if>
+			<if test="secretAnswer !=null">secret_answer=#{secretAnswer},</if>
+			<if test="profile !=null">profile=#{profile}</if>
+		</set>
+		WHERE
+		user_id=#{userId}
+	</update>
+
+	<insert id="inserUser" useGeneratedKeys="true" keyProperty="userId"
+		keyColumn="user_id">
+		INSERT INTO
+		tb_user(user_name,password,nick_name,
+		sex,province,city,birthday,head_img,
+		secret_answer,create_time,last_edit_time,profile)
+		VALUES
+		(#{userName},#{password},#{nickName},#{sex},
+		#{province},#{city},#{birthday},#{headImg},
+		#{secretAnswer},#{createTime},#{lastEditTime},#{profile})
+	</insert>
+
+
+</mapper>

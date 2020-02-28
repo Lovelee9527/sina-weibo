@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>微博头部</title>
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/frontend/head.css">
+<link rel="shortcut icon" href="../resources/images/weibo.ico">
+<link rel="stylesheet" type="text/css"
+	href="../resources/mineIcon/iconfont.css">
+<link href="../resources/js/common/hot-search/css/base/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+<!-- JQuery必需  -->
+<script src="../resources/js/common/jquery/jquery.min.2.2.4.js"></script>
+
+</head>
+<body>
+	<!-- 导航栏部分 -->
+	<div class="nav">
+	
+		<!-- 弹框 -->
+						<div class="alert-delete"
+								style=" display: none;z-index:5 ;width: 220px; height: 210px; background-color: #fff; border-top: 2px solid #FA7D3C; position: absolute; right: 650px; top: 300px;">
+								<div
+									style="position: relative; width: 50px; height: 50px; background-color: #0099FF; border-radius: 50%; margin: 50px auto;">
+									<h1
+										style="color: #fff; font-size: 30px; text-align: center; line-height: 50px;">?</h1>
+								</div>
+								<div style="text-align: center; margin-top: -30px; height: 40px;" class="tips-text">确定要删除该码？</div>
+								<div
+									style="width: 220px; height: 50px; background-color: #f2f2f5; padding-top: 10px;">
+									<button type="button" class="delete-yes"
+										style="cursor: pointer;border: none; color: #fff; background-color: #FA7D3C; font-size: 16px; width: 75px; height: 40px; border-radius: 2px; margin-left: 25px;">确定</button>
+									<button class="delete-cancel" type="button"
+										style="cursor: pointer;border: 1px solid #ccc; color: #333; background-color: #fff; font-size: 16px; width: 75px; height: 40px; border-radius: 2px; margin-left: 15px;">取消</button>
+									<span class="alert-remove" style="cursor: pointer;">X</span>
+								</div>
+							</div>
+      <!-- 弹框 end-->
+      
+      <!-- 无东西的提示 -->
+				<div class="tips-mynotify"
+					style="display:none; width: 600px; height: 200px; background-color: #fff; padding-top: 40px;position: absolute; right: 428px; top: 110px;">
+					<div
+						style="margin: 0 auto; text-align: center; width: 50px; height: 50px; border-radius: 50%; background-color: #87bedc; position: relative;">
+						<span
+							style="line-height: 50px; color: #fff; font-size: 30px; font-weight: bolder;">i</span>
+						<span
+							style="display: block; color: #87bedc; position: absolute; top: 42px; left: 17px;">▼</span>
+					</div>
+					<div class="tips-mynotify-content" style="width: 100%; text-align: center; margin-top: 15px;">
+						你还没有关注的人，要加油哦！</div>
+				</div>
+	 <!-- 提示 end-->
+	
+		<div class="nav-img">
+			<img src="../resources/images/logo.png">
+		</div>
+		<div class="search">
+			<input id="autocomplete" name="search" title="type &quot;a&quot;" type="text" placeholder="搜索微博、找人" class="input-search">
+		</div>
+		<div class="search-icon">
+			<a id="search-btn"><span class="iconfont">&#xe62d;</span></a>
+		</div>
+		
+		<div class="list">
+			<div>
+				<a id="list-special" href="mine"><span class="iconfont">&#xe619;</span>首页</a>
+			</div>
+			<div>
+				<a href="" OnClick="return false"><span class="iconfont">&#xe62e;</span></a>
+			</div>
+			<div>
+				<a href="" OnClick="return false"><span class="iconfont">&#xe718;</span></a>
+			</div>
+			<div>
+				<a href="" id="arrow1" OnClick="return false"><span
+					class="iconfont">&#xe602;</span></a>
+			</div>
+			<!-- <div>
+				<a href=""><span class="iconfont">&#xe62e;</span>视频</a>
+			</div>
+			<div>
+				<a href=""><span class="iconfont">&#xe718;</span>发现</a>
+			</div>
+			<div>
+				<a href="" id="arrow1" OnClick="return false"><span
+					class="iconfont">&#xe602;</span>游戏</a>
+			</div> -->  
+			<div>
+				<a href="" id="nav-nickName"><span class="iconfont">&#xe66b;</span>新浪微博</a>
+			</div>
+		</div>
+	<!-- 7777 -->	
+	<div style="position:relative;margin:auto 0;">
+	<div class="set">
+			<span class="new-letter" id="new-notify">34</span>
+			<div class="letter">
+				<span class="iconfont" id="letter-icon">&#xe71e;</span>
+			</div>
+			<div>
+				<span class="iconfont" id="set-icon">&#xe624;</span>
+			</div>
+			<div>
+				<span class="iconfont" id="set-special">&#xe628;</span>
+			</div>
+		</div>
+		<!-- 信封内容弹出 -->
+		<div class="letter-context">
+			<ul>
+				<div id="div-atMy">
+					<li><a id="notify-atMy">@我的</a><span id="atCount" style="color:#fff;">1</span></li>
+				</div>
+				<div id="div-comment">
+					<li><a  id="notify-comment">评论</a><span
+						id="commentCount" style="color:#fff;">1</span></li>
+				</div>
+				<div id="div-reply">
+					<li><a  id="notify-reply">回复</a><span id="replyCount" style="color:#fff;">1</span></li>
+				</div>
+				<div id="div-relation">
+					<li><a  id="notify-relation">关注</a><span
+						id="relationCount" style="color:#fff;"></span></li>
+				</div>
+				<div id="div-praise">
+					<li><a  id="notify-praise">赞</a><span id="praiseCount" style="color:#fff;">1</span></li>
+				</div>
+				<div id="letter-line"></div>
+				<!-- <div>
+					<li><a href="">私信</a><span id="privateCount" style="color:#fff;"></span></li>
+				</div>
+				<div>
+					<li><a href="">未关注人私信</a><span style="color:#fff;"></span></li>
+				</div>
+				<div>
+					<li><a href="">群通知</a><span style="color:#fff;"></span></li>
+				</div> -->
+				<div id="letter-line"></div>
+				<!-- <div>
+					<li><a href="">消息设置</a>
+				</div> -->
+			</ul>
+		</div>
+		<!-- 信封内容弹出 -->
+		<!-- 设置内容弹出 -->
+		<div class="set-context">
+			<ul>
+				<!-- <div>
+					<li><a href="">账号设置</a></li>
+				</div>
+				<div>
+					<li><a href="">会员中心</a></li>
+				</div>
+				<div>
+					<li><a href="">V认证</a></li>
+				</div>
+				<div>
+					<li><a href="">账号安全</a></li>
+				</div>
+				<div>
+					<li><a href="">隐私设置</a></li>
+				</div>
+				<div>
+					<li><a href="">屏蔽设置</a></li>
+				</div>
+				<div>
+					<li><a href="">消息设置</a></li>
+				</div>
+				<div>
+					<li><a href="">帮助中心</a></li>
+				</div> -->
+				<div id="letter-line"></div>
+				<div>
+					<li><a href="" id="loginOut" OnClick="return false" style="margin-left:20px;">退出登录</a>
+				</div>
+				<div id="letter-line"></div>
+			</ul>
+		</div>
+		<!-- 设置内容弹出 -->
+	</div>
+	<!-- 7777 -->
+	</div>
+	
+
+</body>
+
+<!-- <script src="../resources/js/common/hot-search/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script>
+		$(function() {				
+			var availableTags = [
+				"古天乐",
+				"张家辉",
+				"小幸运",
+				"妮妮",
+				"李易峰",
+				"梁朝伟",
+				"复仇者联盟",
+				"古",
+				"ColdFusion",
+				"Erlang",
+				"Fortran",
+				"Groovy",
+				"Haskell",
+				"Java",
+				"JavaScript",
+				"Lisp",
+				"Perl",
+				"PHP",
+				"Python",
+				"Ruby",
+				"Scala",
+				"Scheme"
+			];
+			$( "#autocomplete" ).autocomplete({
+				source: availableTags
+			});										
+		});
+		</script>	 -->
+</html>

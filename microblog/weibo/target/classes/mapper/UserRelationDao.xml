@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gdcp.weibo.dao.UserRelationDao">
+	<resultMap type="com.gdcp.weibo.entity.UserRelation" id="relationMap">
+		<id column="user_relation_id" javaType="Long" property="userRelationId" />
+		<result property="state" column="state" />
+		<result property="createTime" column="create_time" />
+		<result property="lastEditTime" column="last_edit_time" />
+
+		<association property="fans" column="fans_id"
+			javaType="com.gdcp.weibo.entity.User">
+			<id column="user_id" property="userId" />
+			<result column="user_id" property="userId" />
+			<result column="user_name" property="userName" />
+			<result column="head_img" property="headImg" />
+			<result column="nick_name" property="nickName" />
+			<result column="profile" property="profile" />
+			<result column="sex" property="sex" />
+			<result column="province" property="province" />
+			<result column="city" property="city" />
+		</association>
+		<association property="stars" column="stars_id"
+			javaType="com.gdcp.weibo.entity.User">
+			<id column="user_id" property="userId" />
+			<result column="user_id" property="userId" />
+			<result column="user_name" property="userName" />
+			<result column="head_img" property="headImg" />
+			<result column="nick_name" property="nickName" />
+			<result column="profile" property="profile" />
+			<result column="sex" property="sex" />
+			<result column="province" property="province" />
+			<result column="city" property="city" />
+		</association>
+	</resultMap>
+
+	<select id="queryUserRelationList" resultMap="relationMap">
+		SELECT
+		user_relation_id,
+		state,
+		ur.create_time,
+		ur.last_edit_time,
+		stars_id,
+		fans_id,
+		u.nick_name,
+		u.head_img,
+		u.user_name,
+		u.user_id,
+		u.profile,
+		u.sex,
+		u.province,
+		u.city
+		FROM
+		tb_user u,
+		tb_user_relation
+		ur
+		<where>
+			<if
+				test="relationCondition!=null and relationCondition.fans!=null 
+			and relationCondition.fans.userId !=null">
+				AND
+				ur.fans_id = #{relationCondition.fans.userId}
+				AND
+				u.user_id=ur.stars_id
+			</if>
+			<if
+				test="relationCondition!=null and relationCondition.stars!=null 
+			and relationCondition.stars.userId !=null">
+				AND
+				ur.stars_id = #{relationCondition.stars.userId}
+				AND
+				u.user_id=ur.fans_id
+			</if>
+			<if test="relationCondition!=null and relationCondition.state!=null">
+				AND
+				ur.state = #{relationCondition.state}
+			</if>
+		</where>
+		ORDER BY
+		ur.last_edit_time DESC
+	</select>
+
+	<select id="queryUserRelationCount" resultType="int">
+		SELECT
+		count(1)
+		FROM
+		tb_user u,
+		tb_user_relation ur
+		<where>
+			<if
+				test="relationCondition!=null and relationCondition.fans!=null 
+			and relationCondition.fans.userId !=null">
+				AND
+				ur.fans_id = #{relationCondition.fans.userId}
+				AND
+				u.user_id=ur.stars_id
+			</if>
+			<if
+				test="relationCondition!=null and relationCondition.stars!=null 
+			and relationCondition.stars.userId !=null">
+				AND
+				ur.stars_id = #{relationCondition.stars.userId}
+				AND
+				u.user_id=ur.fans_id
+			</if>
+			<if test="relationCondition!=null and relationCondition.state!=null">
+				AND
+				ur.state = #{relationCondition.state}
+			</if>
+		</where>
+	</select>
+
+	<select id="queryUserRelation" resultMap="relationMap">
+		SELECT
+		user_relation_id,
+		state,
+		ur.create_time,
+		ur.last_edit_time,
+		stars_id,
+		fans_id,
+		u.nick_name,
+		u.head_img
+		FROM
+		tb_user u,
+		tb_user_relation
+		ur
+		<where>
+			fans_id= #{userRelation.fans.userId}
+			AND
+			stars_id=
+			#{userRelation.stars.userId}
+			AND
+			u.user_id=
+			#{userRelation.stars.userId}
+			<!-- user_relation_id=#{userRelation.userRelationId} -->
+			<if test="userRelation!=null and userRelation.state!=null">
+				AND
+				state = #{userRelation.state}
+			</if>
+		</where>
+	</select>
+
+	<update id="updateUserRelation">
+		UPDATE
+		tb_user_relation
+		<set>
+			<if test="userRelation!=null and userRelation.state!=null">
+				state = #{userRelation.state},
+			</if>
+			<if test="userRelation!=null and userRelation.lastEditTime!=null">
+				last_edit_time = #{userRelation.lastEditTime}
+			</if>
+		</set>
+		WHERE
+		fans_id= #{userRelation.fans.userId}
+		AND
+		stars_id=
+		#{userRelation.stars.userId}
+	</update>
+
+	<delete id="deleteUserRelationById">
+		delete
+		FROM
+		tb_user_relation
+		WHERE
+		fans_id= #{fansId}
+		AND
+		stars_id= #{starsId}
+	</delete>
+
+	<insert id="insertUserRelation" useGeneratedKeys="true"
+		keyProperty="userRelationId" keyColumn="user_relation_id">
+		INSERT INTO
+		tb_user_relation(fans_id,stars_id,state,
+		create_time)
+		VALUES(#{fans.userId},#{stars.userId},
+		#{state},#{createTime})
+	</insert>
+
+
+</mapper>

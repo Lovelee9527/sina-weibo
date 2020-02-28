@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gdcp.weibo.dao.PraiseDao">
+	<resultMap id="praiseMap" type="com.gdcp.weibo.entity.Praise">
+		<id property="praiseId" column="praise_id" />
+		<result property="state" column="state" />
+		<result property="createTime" column="create_time" />
+		<result property="lastEditTime" column="last_edit_time" />
+		<result property="weiboId" column="weibo_id" />
+		<association property="user" column="user_id"
+			javaType="com.gdcp.weibo.entity.User">
+			<id property="userId" column="user_id" />
+			<result property="nickName" column="nick_name" />
+			<result property="headImg" column="head_img" />
+		</association>
+	</resultMap>
+	<select id="queryPraiseList" resultMap="praiseMap">
+		SELECT
+		*
+		FROM
+		tb_praise p,
+		tb_user u
+		<where>
+			<if
+				test="praiseCondition!=null and praiseCondition.user!=null and praiseCondition.user.userId!=null">
+				AND p.user_id = #{praiseCondition.user.userId}
+			</if>
+			<if test="praiseCondition!=null and praiseCondition.weiboId!=null">
+				AND p.weibo_id = #{praiseCondition.weiboId}
+			</if>
+			<if test="praiseCondition!=null and praiseCondition.state!=null">
+				AND p.state = #{praiseCondition.state}
+			</if>
+			AND p.user_id = u.user_id
+		</where>
+		Order by
+		p.last_edit_time DESC
+	</select>
+	
+	<select id="queryPraiseCount" resultType="int">
+		SELECT
+		count(1)
+		FROM
+		tb_praise p,
+		tb_user u
+		<where>
+			<if
+				test="praiseCondition!=null and praiseCondition.user!=null and praiseCondition.user.userId!=null">
+				AND p.user_id = #{praiseCondition.user.userId}
+			</if>
+			<if test="praiseCondition!=null and praiseCondition.weiboId!=null">
+				AND p.weibo_id = #{praiseCondition.weiboId}
+			</if>
+			<if test="praiseCondition!=null and praiseCondition.state!=null">
+				AND p.state = #{praiseCondition.state}
+			</if>
+			AND p.user_id = u.user_id
+		</where>
+	</select>
+
+	<update id="updatePraise" parameterType="com.gdcp.weibo.entity.Praise">
+		UPDATE
+		tb_praise
+		<set>
+			<if test="praise!=null and praise.state!=null">
+				state=#{praise.state},
+			</if>
+			<if test="praise!=null and praise.lastEditTime!=null">
+				last_edit_time=#{praise.lastEditTime}
+			</if>
+		</set>
+		<where>
+			<if test="praise!=null and praise.weiboId!=null">
+				AND weibo_id =#{praise.weiboId}
+			</if>
+			AND user_id = #{praise.user.userId}
+		</where>
+	</update>
+	
+	<delete id="deletePraise" parameterType="com.gdcp.weibo.entity.Praise">
+	    DELETE 
+	    FROM tb_praise
+	    <where>
+	       <if test="praise!=null and praise.state!=null">
+	           AND state = #{praise.state}
+	       </if>
+	        <if test="praise!=null and praise.weiboId!=null">
+	           AND weibo_id = #{praise.weiboId}
+	       </if>
+	       AND user_id = #{praise.user.userId}
+	    </where>
+	</delete>
+
+	<insert id="insertPraise" useGeneratedKeys="true" keyProperty="praiseId"
+		keyColumn="praise_id">
+		INSERT INTO
+		tb_praise(user_id,state,create_time,
+		last_edit_time,weibo_id)
+		VALUES(#{user.userId},#{state},
+		#{createTime},#{lastEditTime},#{weiboId})
+	</insert>
+
+</mapper>
